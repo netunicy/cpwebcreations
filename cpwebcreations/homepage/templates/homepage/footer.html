@@ -1,0 +1,63 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'homepage/footer.css' %}">
+    <title>Website Footer</title>
+</head>
+<body>
+    <footer>
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <p>CP Software Solutions At CP Software Solutions,
+                        we specialize in creating innovative, 
+                        user-friendly software tailored to meet the needs of modern 
+                        businesses. With expertise in Python, Django, 
+                        HTML, CSS, and Kivy, we deliver dynamic web applications, 
+                        mobile solutions, and seamless integrations for diverse 
+                        industries. Our mission is to empower clients with robust, 
+                        scalable, and cost-effective technology that drives efficiency 
+                        and growth. Based in Nicosia and London, we take pride in 
+                        combining local insights with global expertise to offer 
+                        exceptional customer service and cutting-edge solutions. 
+                        At CP Software Solutions, your success is our priority, 
+                        and we’re committed to turning your ideas into reality.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><a href="mailto:cpsoftwaresolutions@outlook.com">Email: cpsoftwaresolutions@outlook.com</a></li>
+                        <li><a href="tel:0035799899041">Phone Cy: 00357-99899041</a></li>
+                        <li><a href="tel:00447731869171">Phone UK: 0044-7731869171</a></li>
+                        <li>Address: Nicosia, Cyprus</li>
+                        <li>Address: London, United Kingdom</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fa fa-facebook"></i> Facebook</a>
+                <a href="#"><i class="fa fa-twitter"></i> Twitter</a>
+                <a href="#"><i class="fa fa-instagram"></i> Instagram</a>
+            </div>
+            <p>&copy; 2025 CP Software Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+{% endblock content %}

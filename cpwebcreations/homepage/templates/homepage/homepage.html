@@ -1,0 +1,97 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="el">
+    
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="{% static 'homepage/homepage.css' %}">
+        <title>Homepage</title>
+    </head>
+
+<body>
+    {% for i in logo %}
+        <img class="image" src="{{i.image}}" >
+    {% endfor %}
+    
+    <div class='categories'>
+        <div class='homepage'>
+            <a href="{% url 'homepage' %}">Homepage</a>
+        </div>
+        <div class='about_us'>
+            <a href="{% url 'aboutus' %}">About Us</a>
+        </div>
+        <div class='Services'>
+            <a href="{% url 'aboutus' %}">Services</a>
+        </div>
+        <div class='Technologies'>
+            <a href="{% url 'aboutus' %}">Technologies</a>
+        </div>
+        <div class='contact_us'>
+            <a href="{% url 'aboutus' %}">Contact Us</a>
+        </div>
+
+    </div>
+
+    <a href="#" class="button" onclick="showMessage()">
+        Get Started
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M10 6l6 6-6 6V6z"/>
+        </svg>
+    </a>
+
+    <a href="#" class="button" onclick="toggleMessage(event)">
+        Get Started
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M10 6l6 6-6 6V6z"/>
+        </svg>
+    </a>
+
+    <div class="message" id="message"><p> </p>
+        <p>Getting started is simple with CP Software Solutions!</p>
+        <p>Whether you’re an entrepreneur with a groundbreaking idea or a small business looking 
+            to grow, we’re here to make your journey smooth and rewarding.</p>
+        <p>Our team of experts is ready to assist you every step of the way, 
+        from understanding your goals to delivering a solution tailored to your needs. 
+        With a focus on user-friendly design, cutting-edge technology, and personalized 
+        service, we ensure that your vision becomes a reality.</p>
+        <p>The process is easy! Simply contact us, and we’ll schedule a meeting to discuss 
+        your requirements, understand your objectives, and provide actionable 
+        recommendations. We’re committed to delivering solutions that not only meet but 
+        exceed your expectations.</p>
+        <p>At CP Software Solutions, we believe that every idea deserves the chance to 
+        succeed. No matter the size or complexity of your project, we approach every 
+        task with dedication and expertise.</p>
+        <p>Don’t wait to bring your ideas to life. Contact us today, and let’s create 
+        something extraordinary together.</p> 
+        <p>The first step towards building your success 
+        starts here—get in touch now and see how we can make it happen for you!</p>
+    </div>
+
+    <script>
+        function toggleMessage(event) {
+            // Αποτρέπουμε την προεπιλεγμένη ενέργεια του συνδέσμου
+            event.preventDefault();
+
+            // Βρίσκουμε το στοιχείο με το ID "message"
+            const message = document.getElementById('message');
+
+            // Ελέγχουμε την τρέχουσα κατάσταση εμφάνισης και αλλάζουμε ανάλογα
+            if (message.style.display === 'none' || message.style.display === '') {
+                message.style.display = 'block'; // Εμφάνιση του μηνύματος
+            } else {
+                message.style.display = 'none'; // Απόκρυψη του μηνύματος
+            }
+        }
+    </script>
+
+    {% for i in image %}
+        <img src= "{{i.image}}" alt="Main Image" class='Main_image'>
+    {% endfor %}
+
+    {% include "footer.html" %}
+
+</body>
+</html>
+{% endblock content %}

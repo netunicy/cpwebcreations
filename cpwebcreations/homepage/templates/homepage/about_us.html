@@ -1,0 +1,21 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="el">
+    
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="{% static 'aboutus/aboutus.css' %}">
+        <title>About Us</title>
+    </head>
+
+<body>
+    {% include "homepage.html" with logo=logo %}
+    {% for i in about_us %}
+        <h1>{{i.title}}</h1>
+        <p>{{i.text}}</p>
+    {% endfor %}
+</body>
+</html>
+{% endblock content %}

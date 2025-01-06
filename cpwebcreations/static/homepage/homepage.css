@@ -1,0 +1,138 @@
+body {
+    background-image: url("");
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: moveAndFade 4s ease-in-out forwards;
+    
+}
+@keyframes moveAndFade {
+    0% {
+        left: -200px;
+        opacity: 0;
+    }
+    50% {
+        left: 50%;
+        opacity: 1;
+    }
+    100% {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+html {
+    height: 120%;
+    width:100%;
+    margin: 0;
+}
+h1 {
+    text-align: center;
+    font-size: 30px;
+    background-color: #f4ecf7;
+    border-radius: 10px;
+    border-style:outset;
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.categories {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20%;
+    margin-left: 5%;
+}
+
+.homepage, .about_us, .Services, .Technologies, .contact_us{
+    font-size: 30px;
+    padding: 10px 20px 10px 10px;/* top - right - bottom - left*/
+
+}
+
+.homepage a, .about_us a, .Services a, .Technologies a, .contact_us a{
+    color:#8f8f8f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.homepage a:hover, .about_us a:hover, .Services a:hover, .Technologies a:hover, .contact_us a:hover {
+    color: rgb(81, 82, 83);
+    text-decoration: none;
+    font-weight: bold;
+    opacity: 0.5;
+}
+.image {
+    width: 550px;
+    height: 200px;
+    margin-top: 2%;
+    margin-left: 2%;
+    animation: moveAndFade 4s ease-in-out forwards;
+}
+
+.Main_image {
+    width: 550px;
+    height: 300px;
+    margin-top: 27%;
+    left: 7%;
+    position: absolute;
+    border-radius: 20px;
+}
+
+.button {
+    position: absolute;
+    display: inline-flex; /* Χρήση flexbox για ευθυγράμμιση */
+    align-items: center; /* Κεντράρει κάθετα το κείμενο και το βέλος */
+    justify-content: center; /* Ευθυγράμμιση στο κέντρο */
+    padding: 10px 20px; /* Αύξηση padding για καλύτερη εμφάνιση */
+    background-color: #1e90ff;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: auto;
+    height: auto;
+    margin-top: 43%;
+    margin-left: 29%;
+    z-index: 10;
+    gap: 10px;
+}
+
+.message {
+    display: none; /* Κρύβουμε το μήνυμα αρχικά */
+    margin-top: 11%;
+    margin-left: 47%;
+    text-align: justify;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.5;
+}
+
+.message p {
+    width: 85%;
+}
+
+.button:hover {
+    background-color: #0b67c2;
+}
+
+.button svg {
+    margin-left: 10px;
+    width: 16px;
+    height: 16px;
+    fill: #fff;
+    transition: transform 0.3s ease;
+}
+
+.button:hover svg {
+    transform: translateX(5px);
+}

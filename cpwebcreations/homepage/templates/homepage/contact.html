@@ -1,0 +1,18 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="el">
+    
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="{% static 'aboutus/contact.css' %}">
+        <title>Homepage</title>
+    </head>
+
+<body>
+    {% include "homepage.html" with logo=logo %}
+
+</body>
+</html>
+{% endblock content %}
