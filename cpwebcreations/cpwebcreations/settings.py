@@ -132,12 +132,14 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
-EMAIL_HOST_USER = '887c65c39686ff'
-EMAIL_HOST_PASSWORD = '********3d6d'
-EMAIL_PORT = '2525'
+EMAIL_HOST = 'live.smtp.mailtrap.io'
+EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+EMAIL_HOST_USER = 'api'
+EMAIL_HOST_PASSWORD = '388ed30f960c9bd511b4cbd740d05b7d'
+DEFAULT_FROM_EMAIL = 'no-reply@cpnetuni.com'
+
 
 
