@@ -1,4 +1,6 @@
 from django.db import models
+from tinymce.models import HTMLField
+
 
 class Logo(models.Model):
     name=models.CharField(max_length=200, null=True, blank=True)
@@ -12,6 +14,7 @@ class Logo(models.Model):
 class Mainimage(models.Model):
     name=models.CharField(max_length=200, null=True, blank=True)
     image=models.CharField(max_length=1000, null=True, blank=True)
+    content=HTMLField(null=True,blank=True)
     class Meta:
         verbose_name_plural = 'Main Image'
     

@@ -1,0 +1,169 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="el">
+    
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="{% static 'cpsoftware/homepage.css' %}">
+        <title>Homepage</title>
+    </head>
+
+<body>
+    {% for i in logo %}
+        <img class="image" src="{{i.image}}" >
+    {% endfor %}
+
+
+    <div class="message" id="message">
+        {% for i in image1 %}
+            {{ i.content|safe }}
+        {% endfor %}
+    </div>
+
+    <div class="message1" id="message1">
+        {% for i in image2 %}
+            {{ i.content|safe }}
+        {% endfor %}
+    </div>
+
+    <div class="message2" id="message2">
+        {% for i in image3 %}
+            {{ i.content|safe }}
+        {% endfor %}
+    </div>
+
+    <div class="message3" id="message3">
+        {% for i in image4 %}
+            {{ i.content|safe }}
+        {% endfor %}
+    </div>
+
+    <a href="#" class="button" onclick="showMessage()">
+        Get Started
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M10 6l6 6-6 6V6z"/>
+        </svg>
+    </a>
+
+    <a href="#" class="button" onclick="toggleMessage(event)">
+        Get Started
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M10 6l6 6-6 6V6z"/>
+        </svg>
+    </a>
+
+    <!-- Technologies Buttons -->
+    <a href="#" class="button1" onclick="showMessage1()">
+        Technologies
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M10 6l6 6-6 6V6z"/>
+        </svg>
+    </a>
+
+    <a href="#" class="button1" onclick="toggleMessage1(event)">
+        Technologies
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M10 6l6 6-6 6V6z"/>
+        </svg>
+    </a>
+
+    <a href="#" class="button2" onclick="showMessage2()">
+        Services
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M10 6l6 6-6 6V6z"/>
+        </svg>
+    </a>
+
+    <a href="#" class="button2" onclick="toggleMessage2(event)">
+        Services
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M10 6l6 6-6 6V6z"/>
+        </svg>
+    </a>
+
+    <a href="{% url 'contact_us' %}" class="button3">
+        Contact Us
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M10 6l6 6-6 6V6z"/>
+        </svg>
+    </a>
+
+    <script>
+        // Function to show the first message
+        function showMessage() {
+            const message = document.getElementById('message');
+            message.style.display = 'block';
+        }
+
+        // Function to toggle the first message
+        function toggleMessage(event) {
+            event.preventDefault();
+            const message = document.getElementById('message');
+
+            if (message.style.display === 'none' || message.style.display === '') {
+                message.style.display = 'block';
+            } else {
+                message.style.display = 'none';
+            }
+        }
+
+        // Function to show the second message
+        function showMessage1() {
+            const message1 = document.getElementById('message1');
+            message1.style.display = 'block';
+        }
+
+        // Function to toggle the second message
+        function toggleMessage1(event) {
+            event.preventDefault();
+            const message1 = document.getElementById('message1');
+
+            if (message1.style.display === 'none' || message1.style.display === '') {
+                message1.style.display = 'block';
+            } else {
+                message1.style.display = 'none';
+            }
+        }
+
+        function showMessage2() {
+            const message2 = document.getElementById('message2');
+            message2.style.display = 'block';
+        }
+
+        // Function to toggle the second message
+        function toggleMessage2(event) {
+            event.preventDefault();
+            const message2 = document.getElementById('message2');
+
+            if (message2.style.display === 'none' || message2.style.display === '') {
+                message2.style.display = 'block';
+            } else {
+                message2.style.display = 'none';
+            }
+        }
+    </script>
+
+    {% for i in image1 %}
+        <img src= "{{i.image}}" alt="Main Image" class='Main_image1'>
+    {% endfor %}
+
+    {% for i in image2 %}
+        <img src= "{{i.image}}" alt="Main Image" class='Main_image2'>
+    {% endfor %}
+
+    {% for i in image3 %}
+        <img src= "{{i.image}}" alt="Main Image" class='Main_image3'>
+    {% endfor %}
+
+    {% for i in image4 %}
+        <img src= "{{i.image}}" alt="Main Image" class='Main_image4'>
+    {% endfor %}
+
+    {% include "footer.html" %}
+
+
+</body>
+</html>
+{% endblock content %}

@@ -10,13 +10,14 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
-    'homepage.apps.HomepageConfig',
+    'cpsoftware.apps.CpsoftwareConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'tinymce',
 ]
 
 MIDDLEWARE = [
@@ -35,7 +36,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join (BASE_DIR, 'aboutus/templates/aboutus'),
-                 os.path.join (BASE_DIR, 'homepage/templates/homepage'),
+                 os.path.join (BASE_DIR, 'cpsoftware/templates/cpsoftware'),
                  ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -110,6 +111,33 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static')
 ]
 
+TINYMCE_DEFAULT_CONFIG = {
+    "height": "600px",
+    "width": "960px",
+    "language": "el",
+    "menubar": "file edit view insert format tools table help",
+    "plugins": "advlist autolink lists link image charmap print preview anchor searchreplace visualblocks code "
+               "fullscreen insertdatetime media table paste code help wordcount spellchecker",
+    "toolbar": "undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft "
+               "aligncenter alignright alignjustify | outdent indent | numlist bullist checklist | forecolor "
+               "backcolor casechange permanentpen formatpainter removeformat | pagebreak | charmap emoticons | "
+               "fullscreen preview save print | insertfile image media pageembed template link anchor codesample | "
+               "a11ycheck ltr rtl | showcomments addcomment code",
+    "custom_undo_redo_levels": 10,
+    "fontsize_formats": "8pt 9pt 10pt 11pt 12pt 13pt 14pt 15pt 16pt 17pt 18pt 19pt 20pt 21pt 22pt 23pt 24pt 25pt 26pt 27pt 28pt 29pt 30pt 31pt 32pt 33pt 34pt 35pt 36pt",
+}
+
+
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER = '887c65c39686ff'
+EMAIL_HOST_PASSWORD = '********3d6d'
+EMAIL_PORT = '2525'
+EMAIL_USE_TLS = True
+
+

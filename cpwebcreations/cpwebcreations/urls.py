@@ -3,5 +3,6 @@ from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('homepage.urls')),
+    path('', include('cpsoftware.urls')),
+    path('tinymce/', include('tinymce.urls')),
 ]
