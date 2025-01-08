@@ -9,7 +9,7 @@ with open(os.path.join(BASE_DIR,'secret_key.txt')) as f:
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['www.cpsoftwarecreation.com','cpsoftwarecreation.com','127.0.0.1:8000','localhost']
+ALLOWED_HOSTS = ['www.cpsoftwarecreation.com','cpsoftwarecreation.com','127.0.0.1:8000','localhost','cpcreation-e0a98ac3c27d.herokuapp.com']
 
 INSTALLED_APPS = [
     'cpsoftware.apps.CpsoftwareConfig',
@@ -125,7 +125,7 @@ SECURE_HSTS_PRELOAD = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
-CSRF_TRUSTED_ORIGINS = ['https://www.cpsoftwarecreation.com', 'https:// heroku/']
+CSRF_TRUSTED_ORIGINS = ['https://www.cpsoftwarecreation.com', 'https://https://cpcreation-e0a98ac3c27d.herokuapp.com/']
 
 
 TINYMCE_DEFAULT_CONFIG = {
