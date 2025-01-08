@@ -1,4 +1,5 @@
 import os
+import django_heroku
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -7,7 +8,7 @@ SECRET_KEY = 'django-insecure-m8e8+$h39a+!#o06@9d%knhd39b+ws+^!8pj-b(4r#yd+#19^f
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.cpsoftwarecreation.com','cpsoftwarecreation.com','127.0.0.1:8000','localhost']
 
 INSTALLED_APPS = [
     'cpsoftware.apps.CpsoftwareConfig',
@@ -111,6 +112,18 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static')
 ]
 
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
+SECURE_HSTS_SECONDS= 31536000
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+CSRF_TRUSTED_ORIGINS = ['https://www.cpsoftwarecreation.com', 'https:// heroku/']
+
+
 TINYMCE_DEFAULT_CONFIG = {
     "height": "600px",
     "width": "960px",
@@ -141,5 +154,5 @@ EMAIL_HOST_USER = 'api'
 EMAIL_HOST_PASSWORD = '388ed30f960c9bd511b4cbd740d05b7d'
 DEFAULT_FROM_EMAIL = 'no-reply@cpnetuni.com'
 
-
+django_heroku.settings(locals())
 
