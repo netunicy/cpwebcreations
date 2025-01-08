@@ -308,10 +308,10 @@ h1 {
 }
 
 #viwer {
-    left: 50px;
-    top: 650px;
+    left: 10%;
+    top: 150%;
     position: absolute;
-    background-color: white;
+    background-color: rgb(197, 196, 196);
     color: black;
     padding: 10px;
     border-radius: 8px;
