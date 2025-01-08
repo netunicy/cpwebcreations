@@ -1,6 +1,8 @@
 from django.db import models
 from tinymce.models import HTMLField
 
+class PageView(models.Model):
+    homepage_view_count = models.IntegerField(default=0)
 
 class Logo(models.Model):
     name=models.CharField(max_length=200, null=True, blank=True)
