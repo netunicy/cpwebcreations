@@ -15,7 +15,6 @@
         <img class="image" src="{{i.image}}" >
     {% endfor %}
 
-
     <div class="message" id="message">
         {% for i in image1 %}
             {{ i.content|safe }}
@@ -90,6 +89,8 @@
         </svg>
     </a>
 
+    <h2 id='viwer'>Views: {{viewer}}</h2>
+
     <script>
         // Function to show the first message
         function showMessage() {
@@ -163,7 +164,6 @@
 
     {% include "footer.html" %}
 
-    <h2 id='viwer'>Views: {{viewer}}</h2>
     
 </body>
 </html>
