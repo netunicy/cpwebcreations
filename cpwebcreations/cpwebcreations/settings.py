@@ -1,12 +1,13 @@
 import os
 import django_heroku
-from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DEBUG = False
 
-SECRET_KEY = 'django-insecure-m8e8+$h39a+!#o06@9d%knhd39b+ws+^!8pj-b(4r#yd+#19^f'
+with open(os.path.join(BASE_DIR,'secret_key.txt')) as f:
+    SECRET_KEY = f.read().strip()
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['www.cpsoftwarecreation.com','cpsoftwarecreation.com','127.0.0.1:8000','localhost']
 
