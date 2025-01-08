@@ -90,6 +90,46 @@ button:active {
     color: #aaa;
 }
 
+.button3 {
+    position: absolute;
+    display: inline-flex; /* Χρήση flexbox για ευθυγράμμιση */
+    align-items: center; /* Κεντράρει κάθετα το κείμενο και το βέλος */
+    justify-content: center; /* Ευθυγράμμιση στο κέντρο */
+    padding: 10px 20px; /* Αύξηση padding για καλύτερη εμφάνιση */
+    background-color: #1e90ff;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: auto;
+    height: auto;
+    top: 85%;
+    left: 58.5%;
+    z-index: 10;
+    gap: 10px;
+}
+
+.button3:hover {
+    background-color: #0b67c2;
+}
+
+.button3 svg {
+    margin-left: 10px;
+    width: 16px;
+    height: 16px;
+    fill: #fff;
+    transition: transform 0.3s ease;
+}
+
+.button3:hover svg {
+    transform: translateX(5px);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {

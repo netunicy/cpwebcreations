@@ -10,33 +10,37 @@ body {
 footer {
     background-color: #4d4d4d;
     color: #fff;
-    padding: 20px 0;
+    padding: 10px 0;
     text-align: center;
     margin-top: 160%; /* Automatically pushes the footer to the bottom */
     width: 100%; /* Ensures the footer spans the entire width */
+    height: 90%;
 }
 
 
 footer .container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: auto auto;
     padding: 0 15px;
 }
 
 footer .footer-columns {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Διατηρεί τις στήλες σε μία γραμμή */
+    gap: 30px; /* Αραιώνει τις στήλες */
 }
 
 footer .footer-column {
     flex: 1;
-    margin: 10px;
-    min-width: 200px;
+    max-width: 400px; /* Αυξάνει το μέγιστο πλάτος της κάθε στήλης */
+    margin: 0; /* Καταργεί περιττά περιθώρια */
 }
 
 footer .footer-column p {
     text-align: justify;
+    font-size: 16px;
+    margin: 0px;
 }
 
 footer .footer-column h3 {
@@ -64,7 +68,7 @@ footer .footer-column ul li a:hover {
 }
 
 footer .social-icons {
-    margin-top: 20px;
+    margin-top: 0px;
 }
 
 footer .social-icons a {
@@ -80,7 +84,7 @@ footer .social-icons a:hover {
 }
 
 footer p {
-    margin-top: 20px;
+    margin-top: 10px;
     font-size: 14px;
-    color: #aaa;
+    color: #dcdada;
 }
