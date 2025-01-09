@@ -2,14 +2,14 @@ import os
 import django_heroku
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DEBUG = False
+
 
 with open(os.path.join(BASE_DIR,'secret_key.txt')) as f:
     SECRET_KEY = f.read().strip()
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['www.cpsoftwarecreation.com','cpsoftwarecreation.com','127.0.0.1:8000','localhost','cpcreation-e0a98ac3c27d.herokuapp.com']
+ALLOWED_HOSTS = ['*','127.0.0.1:8000','localhost','www.cpsoftwarecreation.com','cpsoftwarecreation.com','cpcreation-e0a98ac3c27d.herokuapp.com']
 
 INSTALLED_APPS = [
     'cpsoftware.apps.CpsoftwareConfig',
@@ -19,7 +19,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'tinymce',
 ]
 
 MIDDLEWARE = [

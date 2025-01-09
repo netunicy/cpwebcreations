@@ -1,5 +1,4 @@
 from django.db import models
-from tinymce.models import HTMLField
 
 class PageView(models.Model):
     homepage_view_count = models.IntegerField(default=0)
@@ -16,7 +15,7 @@ class Logo(models.Model):
 class Mainimage(models.Model):
     name=models.CharField(max_length=200, null=True, blank=True)
     image=models.CharField(max_length=1000, null=True, blank=True)
-    content=HTMLField(null=True,blank=True)
+    content=models.TextField(max_length=10000,null=True,blank=True)
     class Meta:
         verbose_name_plural = 'Main Image'
     
