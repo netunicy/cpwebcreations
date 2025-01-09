@@ -156,7 +156,7 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_HOST_USER = 'api'
 EMAIL_HOST_PASSWORD = '388ed30f960c9bd511b4cbd740d05b7d'
-DEFAULT_FROM_EMAIL = 'no-reply@cpnetuni.com'
+DEFAULT_FROM_EMAIL = 'no-reply@cpsoftwarecreation.com'
 
 django_heroku.settings(locals())
 
