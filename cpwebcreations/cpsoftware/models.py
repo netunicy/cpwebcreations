@@ -30,3 +30,15 @@ class Aboutus(models.Model):
     
     def __str__(self):
         return self.title
+    
+class Tools_images(models.Model):
+    image1=models.CharField(max_length=1000, null=True, blank=True)
+    image2=models.CharField(max_length=1000, null=True, blank=True)
+    image3=models.CharField(max_length=1000, null=True, blank=True)
+    image4=models.CharField(max_length=1000, null=True, blank=True)
+    image5=models.CharField(max_length=1000, null=True, blank=True)
+    class Meta:
+        verbose_name_plural = 'Tools Images'
+    
+    def __str__(self):
+        return 'Tools Images'

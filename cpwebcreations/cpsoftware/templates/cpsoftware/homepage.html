@@ -26,6 +26,24 @@
         {% for i in image2 %}
             {{ i.content|safe }}
         {% endfor %}
+        
+        {% for i in tools %}
+            {% if i.image1 %}
+                <img src="{{ i.image1 }}" alt="Image 1" class="tools1">
+            {% endif %}
+            {% if i.image2 %}
+                <img src="{{ i.image2 }}" alt="Image 2" class="tools2">
+            {% endif %}
+            {% if i.image3 %}
+                <img src="{{ i.image3 }}" alt="Image 3" class="tools3">
+            {% endif %}
+            {% if i.image4 %}
+                <img src="{{ i.image4 }}" alt="Image 4" class="tools4">
+            {% endif %}
+            {% if i.image5 %}
+                <img src="{{ i.image5 }}" alt="Image 5" class="tools5">
+            {% endif %}
+        {% endfor %}
     </div>
 
     <div class="message2" id="message2">

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Logo, Mainimage, PageView
+from .models import Logo, Mainimage, PageView,Tools_images
 from django.shortcuts import redirect, render
 #from .models import Contact
 import mailtrap as mt
@@ -7,6 +7,7 @@ import mailtrap as mt
 
 def homepage(request):
     image1=Logo.objects.all().values()
+    tools=Tools_images.objects.all().values()
     image2 = Mainimage.objects.filter(id=1).values()
     image3 = Mainimage.objects.filter(id=2).values()
     image4 = Mainimage.objects.filter(id=3).values()
@@ -22,6 +23,7 @@ def homepage(request):
         'image3':image4,
         'image4':image5,
         'viewer': viewer.homepage_view_count,
+        'tools':tools,
     }
     return render(request,'homepage.html',context)
 

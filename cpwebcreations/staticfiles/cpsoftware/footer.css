@@ -12,35 +12,36 @@ footer {
     color: #fff;
     padding: 10px 0;
     text-align: center;
-    margin-top: 160%; /* Automatically pushes the footer to the bottom */
+    margin-top: 170%; /* Automatically pushes the footer to the bottom */
     width: 100%; /* Ensures the footer spans the entire width */
     height: 90%;
 }
 
 
 footer .container {
-    max-width: 1200px;
-    margin: auto auto;
-    padding: 0 15px;
+    max-width: 95%; /* Αυξάνει το συνολικό πλάτος του footer */
+    margin: auto; /* Κεντράρει το footer */
 }
 
 footer .footer-columns {
     display: flex;
     justify-content: space-between;
-    flex-wrap: nowrap; /* Διατηρεί τις στήλες σε μία γραμμή */
-    gap: 30px; /* Αραιώνει τις στήλες */
+    flex-wrap: wrap; /* Επιτρέπει στις στήλες να σπάνε σε πολλές γραμμές */
+    gap: 30px; /* Αυξάνει την απόσταση μεταξύ των στηλών */
 }
 
 footer .footer-column {
-    flex: 1;
-    max-width: 400px; /* Αυξάνει το μέγιστο πλάτος της κάθε στήλης */
-    margin: 0; /* Καταργεί περιττά περιθώρια */
+    flex: 1 1 400px; /* Αυξάνει το πλάτος κάθε στήλης */
+    max-width: 600px; /* Επιτρέπει μεγαλύτερο χώρο για το κείμενο */
+    margin: 0 auto; /* Κεντράρει τις στήλες */
+    padding: 0 15px; /* Ελαφρύ padding για καλύτερη εμφάνιση */
 }
 
 footer .footer-column p {
-    text-align: justify;
-    font-size: 16px;
-    margin: 0px;
+    text-align: justify; /* Ευθυγραμμισμένο κείμενο */
+    font-size: 1,5vw; /* Μέγεθος γραμματοσειράς για καλύτερη ανάγνωση */
+    line-height: 1.4; /* Απόσταση μεταξύ γραμμών */
+    margin: 0; /* Αφαιρεί περιττά περιθώρια */
 }
 
 footer .footer-column h3 {
