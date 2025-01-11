@@ -19,6 +19,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'captcha',
 ]
 
 MIDDLEWARE = [
@@ -124,6 +125,13 @@ SECURE_HSTS_PRELOAD = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
+CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.random_char_challenge'  # Default είναι τυχαία γράμματα
+CAPTCHA_LENGTH = 6  # Μήκος του CAPTCHA
+CAPTCHA_IMAGE_SIZE = (150, 50)  # Διαστάσεις εικόνας
+CAPTCHA_FONT_SIZE = 36  # Μέγεθος γραμματοσειράς
+CAPTCHA_TIMEOUT = 5  # Διάρκεια ισχύος CAPTCHA σε λεπτά
+
+
 CSRF_TRUSTED_ORIGINS = ['https://www.cpsoftwarecreation.com', 'https://https://cpcreation-e0a98ac3c27d.herokuapp.com/']
 
 
@@ -148,14 +156,12 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'live.smtp.mailtrap.io'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False
-EMAIL_HOST_USER = 'api'
-EMAIL_HOST_PASSWORD = '388ed30f960c9bd511b4cbd740d05b7d'
-DEFAULT_FROM_EMAIL = 'no-reply@cpsoftwarecreation.com'
+
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER = '408cc504ce0765'
+EMAIL_HOST_PASSWORD = '76bcfec90e847b'  # Αντικατάστησε με το πραγματικό σου password
+EMAIL_PORT = 2525
+
 
 django_heroku.settings(locals())
 

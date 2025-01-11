@@ -1,4 +1,3 @@
-{% block content %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -6,31 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'cpsoftware/contact_us_form.css' %}">
-    <title>Website Footer</title>
+    <title>Contact Us</title>
 </head>
 <body>
     <div class="container">
         <form method="post" id="contact">
             {% csrf_token %}
-            <h3>Contact Form</h3>
-            <fieldset>
-                <input placeholder="Name" type="text" tabindex="1" required autofocus name="name">
-            </fieldset>
-            <fieldset>
-                <input placeholder="Surname" type="text" tabindex="2" required name="surname">
-            </fieldset>
-            <fieldset>
-                <input placeholder="Email Address" name="email" type="email" tabindex="3" required>
-            </fieldset>
-            <fieldset>
-                <input placeholder="Phone Number (optional)" name="phonenum" type="tel" tabindex="4">
-            </fieldset>
-            <fieldset>
-                <input placeholder="Subject" type="text" tabindex="5" required name="subject">
-            </fieldset>
-            <fieldset>
-                <textarea placeholder="Type your message here...." name="message" tabindex="6" required></textarea>
-            </fieldset>
+            {{ form.as_p }}  <!-- Αυτό κάνει render όλα τα πεδία της φόρμας, συμπεριλαμβανομένου του CAPTCHA -->
             <fieldset>
                 <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
             </fieldset>
@@ -39,12 +20,5 @@
             </p>
         </form>
     </div>
-    <a href="{% url 'homepage' %}" class="button3">
-        Homepage
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M10 6l6 6-6 6V6z"/>
-        </svg>
-    </a>
 </body>
 </html>
-{% endblock content %}

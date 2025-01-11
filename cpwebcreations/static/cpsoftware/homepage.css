@@ -37,11 +37,12 @@ html {
     animation: moveAndFade 4s ease-in-out forwards;
 }
 
-.tools1, .tools2, .tools3, .tools4, .tools5 {
-    gap: 20px; /* Διατήρηση του κενού μεταξύ των εικόνων */
+.tools1, .tools2, .tools3, .tools4, .tools5, .tools6 {
+    gap: 10px; /* Διατήρηση του κενού μεταξύ των εικόνων */
     object-fit: cover; /* Προσαρμόζει την εικόνα στο container χωρίς παραμόρφωση */
     display: inline-block; /* Βεβαιώνει ότι οι εικόνες παραμένουν ευθυγραμμισμένες */
-    margin-left: 4% !important;
+    margin-left: 1%; /* Περιθώριο αριστερά */
+    vertical-align: middle; /* Κεντρική κάθετη ευθυγράμμιση */
 }
 
 .tools1, .tools3 {
@@ -49,8 +50,14 @@ html {
     height: auto; /* Ύψος 3cm */
 }
 
-.tools2{
+.tools2 {
     width: 9.84vw; /* Πλάτος 3cm */
+    height: auto; /* Ύψος 3cm */
+
+}
+
+.tools6 {
+    width: 10vw; /* Πλάτος 3cm */
     height: auto; /* Ύψος 3cm */
 }
 
@@ -100,7 +107,8 @@ html {
     display: inline-flex; /* Χρήση flexbox για ευθυγράμμιση */
     align-items: center; /* Κεντράρει κάθετα το κείμενο και το βέλος */
     justify-content: center; /* Ευθυγράμμιση στο κέντρο */
-    padding: 10px 20px; /* Αύξηση padding για καλύτερη εμφάνιση */
+    padding: 0.52vw 1.04vw;
+ /* Αύξηση padding για καλύτερη εμφάνιση */
     background-color: #1e90ff;
     color: #fff;
     font-size: 1.5vw;
@@ -114,7 +122,7 @@ html {
     width: auto;
     height: auto;
     margin-top: 48%;
-    margin-left: 20%;
+    margin-left: 20vw;
     z-index: 10;
     gap: 10px;
 }
@@ -140,7 +148,8 @@ html {
     display: inline-flex; /* Χρήση flexbox για ευθυγράμμιση */
     align-items: center; /* Κεντράρει κάθετα το κείμενο και το βέλος */
     justify-content: center; /* Ευθυγράμμιση στο κέντρο */
-    padding: 10px 20px; /* Αύξηση padding για καλύτερη εμφάνιση */
+    padding: 0.52vw 1.04vw;
+ /* Αύξηση padding για καλύτερη εμφάνιση */
     background-color: #1e90ff;
     color: #fff;
     font-size: 1.5vw;
@@ -154,7 +163,7 @@ html {
     width: auto;
     height: auto;
     margin-top: 82%;
-    margin-left: 18%;
+    margin-left: 18vw;
     z-index: 10;
     gap: 10px;
 }
@@ -180,7 +189,8 @@ html {
     display: inline-flex; /* Χρήση flexbox για ευθυγράμμιση */
     align-items: center; /* Κεντράρει κάθετα το κείμενο και το βέλος */
     justify-content: center; /* Ευθυγράμμιση στο κέντρο */
-    padding: 10px 20px; /* Αύξηση padding για καλύτερη εμφάνιση */
+    padding: 0.52vw 1.04vw;
+ /* Αύξηση padding για καλύτερη εμφάνιση */
     background-color: #1e90ff;
     color: #fff;
     font-size: 1.5vw;
@@ -194,7 +204,7 @@ html {
     width: auto;
     height: auto;
     margin-top: 119%;
-    margin-left: 23%;
+    margin-left: 23vw;
     z-index: 10;
     gap: 10px;
 }
@@ -220,7 +230,8 @@ html {
     display: inline-flex; /* Χρήση flexbox για ευθυγράμμιση */
     align-items: center; /* Κεντράρει κάθετα το κείμενο και το βέλος */
     justify-content: center; /* Ευθυγράμμιση στο κέντρο */
-    padding: 10px 20px; /* Αύξηση padding για καλύτερη εμφάνιση */
+    padding: 0.52vw 1.04vw;
+ /* Αύξηση padding για καλύτερη εμφάνιση */
     background-color: #1e90ff;
     color: #fff;
     font-size: 1.5vw;
@@ -234,7 +245,7 @@ html {
     width: auto;
     height: auto;
     margin-top: 155%;
-    margin-left: 21%;
+    margin-left: 21vw;
     z-index: 10;
     gap: 10px;
 }
@@ -318,4 +329,19 @@ html {
     align-items: center; /* Κάθετη κεντράρισμα */
     justify-content: center; /* Οριζόντια κεντράρισμα */
     text-align: center; /* Σε περίπτωση που το κείμενο είναι πολύγραμμο */
+}
+
+@media only screen and (max-width: 500px) and (min-width: 280px) {
+    .button, .button1, .button2, .button3 {
+        margin-left: 10%;
+    }
+
+    #viwer {
+        right: 3%;
+        margin-top: 175%;
+        width: 20%;
+        height: 2%;
+        font-size: 14px;
+        padding: 10px 10px;
+    }
 }

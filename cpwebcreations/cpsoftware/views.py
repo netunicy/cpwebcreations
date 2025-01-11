@@ -3,6 +3,7 @@ from .models import Logo, Mainimage, PageView,Tools_images
 from django.shortcuts import redirect, render
 #from .models import Contact
 import mailtrap as mt
+from django.core.mail import send_mail
 
 
 def homepage(request):
@@ -37,30 +38,47 @@ def aboutus(request):
     }
     return render(request,'about_us.html',context)
 
+from django.shortcuts import render, redirect
+from .forms import ContactForm
+import mailtrap as mt
+
+from django.core.mail import send_mail
+from django.shortcuts import render, redirect
+from .forms import ContactForm
+
 def contact_us(request):
-  if request.method == 'POST':
-    name = request.POST.get('name')
-    surname = request.POST.get('surname')
-    email = request.POST.get('email')
-    phone = request.POST.get('phonenum')
-    subject = request.POST.get('subject')
-    message = request.POST.get('message')
-    
-    mail = mt.Mail(
-      sender=mt.Address(email="mailtrap@cpnetuni.com", name="Contact"),
-      to=[mt.Address(email='cpsoftwaresolutions@outlook.com')],
-      subject=subject,
-      text = name + ' ' + surname + '\n' + phone + '\n' +email + '\n' + message,
-      category="Contact",
-    )
-    client = mt.MailtrapClient(token="3a3a19708b13ce12b954eab968ee3a59")
-    client.send(mail)
-    name = None
-    surname = None
-    email = None
-    phone = None
-    subject = None
-    message = None
-    return redirect ('cpsoftware')
-  else:
-    return render(request, "contact_us_form.html")
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            # Ανάκτηση δεδομένων φόρμας
+            name = form.cleaned_data['name']
+            surname = form.cleaned_data['surname']
+            email = form.cleaned_data['email']
+            phone = form.cleaned_data.get('phone', 'N/A')
+            subject = form.cleaned_data['subject']
+            message = form.cleaned_data['message']
+
+            email_subject = f"New Contact Form Submission: {subject}"
+            email_message = (
+                f"Name: {name} {surname}\n"
+                f"Email: {email}\n"
+                f"Phone: {phone}\n\n"
+                f"Message:\n{message}"
+            )
+
+            # Αποστολή email μέσω Mailtrap
+            send_mail(
+                email_subject,  # Θέμα
+                email_message,  # Μήνυμα
+                'mailtrap@cpsoftwarecreation.com',  # Από
+                ['test@cpsoftwarecreation.com'],  # Προς
+                fail_silently=False,
+            )
+
+            return redirect('homepage')
+  # Redirect σε success page
+    else:
+        form = ContactForm()
+
+    return render(request, "contact_us_form.html", {'form': form})
+
