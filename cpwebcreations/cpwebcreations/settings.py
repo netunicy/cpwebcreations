@@ -7,7 +7,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 with open(os.path.join(BASE_DIR,'secret_key.txt')) as f:
     SECRET_KEY = f.read().strip()
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*','127.0.0.1:8000','localhost','www.cpsoftwarecreation.com','cpsoftwarecreation.com','cpcreation-e0a98ac3c27d.herokuapp.com']
 
@@ -116,14 +116,14 @@ STATICFILES_DIRS = [
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
 
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SECURE_SSL_REDIRECT = True
-SECURE_HSTS_SECONDS= 31536000
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_HSTS_PRELOAD = True
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+#SESSION_COOKIE_SECURE = True
+#CSRF_COOKIE_SECURE = True
+#SECURE_SSL_REDIRECT = True
+#SECURE_HSTS_SECONDS= 31536000
+#SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+#SECURE_HSTS_PRELOAD = True
+#SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+#SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.random_char_challenge'  # Default είναι τυχαία γράμματα
 CAPTCHA_LENGTH = 6  # Μήκος του CAPTCHA
@@ -132,7 +132,7 @@ CAPTCHA_FONT_SIZE = 36  # Μέγεθος γραμματοσειράς
 CAPTCHA_TIMEOUT = 5  # Διάρκεια ισχύος CAPTCHA σε λεπτά
 
 
-CSRF_TRUSTED_ORIGINS = ['https://www.cpsoftwarecreation.com', 'https://https://cpcreation-e0a98ac3c27d.herokuapp.com/']
+CSRF_TRUSTED_ORIGINS = ['https://www.cpsoftwarecreation.com', 'https://cpcreation-e0a98ac3c27d.herokuapp.com/']
 
 
 TINYMCE_DEFAULT_CONFIG = {
