@@ -8,4 +8,4 @@ class ContactForm(forms.Form):
     phone = forms.CharField(max_length=50, required=False, label="Phone Number")
     subject = forms.CharField(max_length=100, required=True, label="Subject")
     message = forms.CharField(widget=forms.Textarea, required=True, label="Message")
-    captcha = CaptchaField()  # CAPTCHA πεδίο
+    captcha = CaptchaField(label="Type the latters")

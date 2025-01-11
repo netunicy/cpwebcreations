@@ -39,7 +39,7 @@ fieldset {
 /* Input and Textarea Styling */
 input, textarea {
     width: 100%;
-    padding: 12px 15px;
+    padding: 10px 13px;
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 14px;
@@ -130,6 +130,13 @@ button:active {
     transform: translateX(5px);
 }
 
+form#contact img {
+    display: block; /* Αλλάζει το στοιχείο σε block για εύκολη κεντροποίηση */
+    margin: 0 auto; /* Κεντροποιεί οριζόντια */
+    margin-bottom: 10px; /* Προσθέτει κενό χώρο από κάτω */
+
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
@@ -138,5 +145,11 @@ button:active {
 
     h3 {
         font-size: 20px;
+    }
+    .button3 {
+        padding: 6px 8px; /* Αύξηση padding για καλύτερη εμφάνιση */
+        top: 1%;
+        left: 70%;
+        font-size: 13px;
     }
 }

@@ -116,6 +116,7 @@ STATICFILES_DIRS = [
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
 
+SESSION_COOKIE_HTTPONLY = True
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 SECURE_SSL_REDIRECT = True
@@ -134,6 +135,7 @@ CAPTCHA_TIMEOUT = 5  # Διάρκεια ισχύος CAPTCHA σε λεπτά
 
 CSRF_TRUSTED_ORIGINS = ['https://www.cpsoftwarecreation.com', 'https://cpcreation-e0a98ac3c27d.herokuapp.com/']
 
+DEFAULT_CHARSET = 'utf-8'
 
 TINYMCE_DEFAULT_CONFIG = {
     "height": "600px",
