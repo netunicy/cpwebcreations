@@ -108,8 +108,8 @@ button:active {
     transition: background-color 0.3s ease;
     width: auto;
     height: auto;
-    top: 85%;
-    left: 58.5%;
+    top: 5%;
+    left: 10%;
     z-index: 10;
     gap: 10px;
 }
