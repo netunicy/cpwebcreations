@@ -14,7 +14,7 @@ footer {
     color: #fff;
     padding: 20px 0; /* Padding πάνω και κάτω */
     text-align: center;
-    margin-top: auto; /* Αυτόματο κλείδωμα στο κάτω μέρος */
+    margin-top: 100vw; /* Αυτόματο κλείδωμα στο κάτω μέρος */
     width: 100%;
 }
 
