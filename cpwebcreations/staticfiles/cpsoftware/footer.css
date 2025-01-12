@@ -1,51 +1,113 @@
-/* Γενικές ρυθμίσεις */
-html, body {
+/* Reset για το body */
+body {
     margin: 0;
-    padding: 0;
-    height: 100%; /* Καλύπτει όλο το ύψος της οθόνης */
-    display: flex;
-    flex-direction: column;
+    font-family: Arial, sans-serif;
     background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column; /* Κατακόρυφη διάταξη */
+    min-height: 100vh; /* Καλύπτει όλο το ύψος της οθόνης */
 }
 
-/* Το κύριο περιεχόμενο */
-#content {
-    flex: 1; /* Επεκτείνεται για να γεμίσει τον χώρο */
-}
-
-/* Ρυθμίσεις για το Footer */
+/* Footer Styling */
 footer {
     background-color: #4d4d4d;
     color: #fff;
-    padding: 20px;
+    padding: 20px 0; /* Padding πάνω και κάτω */
     text-align: center;
-    width: 100%; /* Πλήρες πλάτος */
-    margin-top: auto; /* Κλειδώνει το footer στο κάτω μέρος */
+    margin-top: auto; /* Αυτόματο κλείδωμα στο κάτω μέρος */
+    width: 100%;
 }
 
-/* Ρυθμίσεις περιεχομένου του Footer */
+/* Κοντέινερ για το footer */
 footer .container {
-    max-width: 1200px;
-    margin: 0 auto; /* Κεντράρει το περιεχόμενο */
-    padding: 10px;
+    max-width: 1200px; /* Περιορίζει το πλάτος */
+    margin: auto; /* Κεντράρει */
 }
 
+/* Στήλες footer */
 footer .footer-columns {
     display: flex;
-    flex-wrap: wrap; /* Υποστήριξη για μικρές οθόνες */
     justify-content: space-between;
+    flex-wrap: wrap; /* Σπάει τις στήλες στις μικρές οθόνες */
+    gap: 20px;
 }
 
+/* Ρυθμίσεις στηλών */
 footer .footer-column {
-    flex: 1 1 200px; /* Δυναμική διάταξη */
-    margin: 10px 0;
+    flex: 1 1 300px; /* Δυναμικό μέγεθος */
+    margin: 10px 0; /* Απόσταση μεταξύ στηλών */
     text-align: left;
 }
 
-/* Responsive ρυθμίσεις */
+/* Στυλ επικεφαλίδων */
+footer .footer-column h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #fff;
+}
+
+/* Κείμενο */
+footer .footer-column p {
+    text-align: justify;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #dcdada;
+    margin: 0;
+}
+
+/* Λίστα links */
+footer .footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer .footer-column ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+footer .footer-column ul li a {
+    color: #1e90ff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer .footer-column ul li a:hover {
+    color: #fff;
+}
+
+/* Social Media Icons */
+footer .social-icons {
+    margin-top: 10px;
+}
+
+footer .social-icons a {
+    margin: 0 10px;
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer .social-icons a:hover {
+    color: #1e90ff;
+}
+
+/* Footer Bottom */
+footer p {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #dcdada;
+}
+
+/* Responsive Design */
 @media only screen and (max-width: 768px) {
     footer .footer-columns {
-        flex-direction: column; /* Κάθετη διάταξη στις κινητές συσκευές */
+        flex-direction: column;
         text-align: center;
+    }
+
+    footer .footer-column {
+        margin-bottom: 20px;
     }
 }
