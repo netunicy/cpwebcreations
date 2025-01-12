@@ -30,6 +30,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'cpwebcreations.urls'
@@ -37,8 +38,7 @@ ROOT_URLCONF = 'cpwebcreations.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join (BASE_DIR, 'aboutus/templates/aboutus'),
-                 os.path.join (BASE_DIR, 'cpsoftware/templates/cpsoftware'),
+        'DIRS': [os.path.join (BASE_DIR, 'cpsoftware/templates/cpsoftware'),
                  ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -113,10 +113,9 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-
-#SESSION_COOKIE_HTTPONLY = True
+SESSION_COOKIE_HTTPONLY = True
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 SECURE_SSL_REDIRECT = True
@@ -154,10 +153,7 @@ TINYMCE_DEFAULT_CONFIG = {
 }
 
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
 EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
 EMAIL_HOST_USER = '408cc504ce0765'

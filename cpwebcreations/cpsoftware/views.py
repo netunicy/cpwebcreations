@@ -4,6 +4,13 @@ from django.shortcuts import redirect, render
 #from .models import Contact
 import mailtrap as mt
 from django.core.mail import send_mail
+from django.shortcuts import render, redirect
+from .forms import ContactForm
+import mailtrap as mt
+
+from django.core.mail import send_mail
+from django.shortcuts import render, redirect
+from .forms import ContactForm
 
 
 def homepage(request):
@@ -37,14 +44,6 @@ def aboutus(request):
         'logo':image,
     }
     return render(request,'about_us.html',context)
-
-from django.shortcuts import render, redirect
-from .forms import ContactForm
-import mailtrap as mt
-
-from django.core.mail import send_mail
-from django.shortcuts import render, redirect
-from .forms import ContactForm
 
 def contact_us(request):
     if request.method == 'POST':

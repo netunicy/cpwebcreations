@@ -106,7 +106,7 @@ heroku login
 heroku open
 heroku logs --tail
 heroku run python manage.py collectstatic
-heroku restart --app dimpan
+heroku restart --app cpcreation
 heroku logs --tail
 heroku restart --app dimpan
 heroku config:set DEBUG_COLLECTSTATIC=1

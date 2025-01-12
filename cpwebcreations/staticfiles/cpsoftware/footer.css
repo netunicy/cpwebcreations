@@ -1,85 +1,75 @@
-/* Reset για το body */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
     display: flex;
-    flex-direction: column; /* Κατακόρυφη διάταξη */
-    min-height: 100vh; /* Καλύπτει όλο το ύψος της οθόνης */
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the body covers the full viewport height */
 }
 
-/* Footer Styling */
 footer {
     background-color: #4d4d4d;
     color: #fff;
-    padding: 20px 0; /* Padding πάνω και κάτω */
+    padding: 10px 0;
     text-align: center;
-    margin-top: 170vw; /* Αυτόματο κλείδωμα στο κάτω μέρος */
-    width: 100%;
+    margin-top: 182vw; /* Automatically pushes the footer to the bottom */
+    width: 100%; /* Ensures the footer spans the entire width */
+    height: 90%;
 }
 
-/* Κοντέινερ για το footer */
+
 footer .container {
-    max-width: 1200px; /* Περιορίζει το πλάτος */
-    margin: auto; /* Κεντράρει */
+    max-width: 95%; /* Αυξάνει το συνολικό πλάτος του footer */
+    margin: auto; /* Κεντράρει το footer */
 }
 
-/* Στήλες footer */
 footer .footer-columns {
     display: flex;
-    justify-content: center; /* Κεντράρει τις στήλες */
-    flex-wrap: wrap; /* Σπάει τις στήλες στις μικρές οθόνες */
-    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Επιτρέπει στις στήλες να σπάνε σε πολλές γραμμές */
+    gap: 30px; /* Αυξάνει την απόσταση μεταξύ των στηλών */
 }
 
-/* Ρυθμίσεις στηλών */
 footer .footer-column {
-    flex: 1 1 300px; /* Δυναμικό μέγεθος */
-    margin: 10px 0; /* Απόσταση μεταξύ στηλών */
-    text-align: center; /* Κεντρικό ευθυγράμμιση για το κείμενο */
+    flex: 1 1 400px; /* Αυξάνει το πλάτος κάθε στήλης */
+    max-width: 600px; /* Επιτρέπει μεγαλύτερο χώρο για το κείμενο */
+    margin: 0 auto; /* Κεντράρει τις στήλες */
+    padding: 0 15px; /* Ελαφρύ padding για καλύτερη εμφάνιση */
 }
 
-/* Στυλ επικεφαλίδων */
+footer .footer-column p {
+    text-align: justify; /* Ευθυγραμμισμένο κείμενο */
+    font-size: 1,5vw; /* Μέγεθος γραμματοσειράς για καλύτερη ανάγνωση */
+    line-height: 1.4; /* Απόσταση μεταξύ γραμμών */
+    margin: 0; /* Αφαιρεί περιττά περιθώρια */
+}
+
 footer .footer-column h3 {
     margin-bottom: 15px;
     font-size: 18px;
-    color: #fff;
 }
 
-/* Κείμενο */
-footer .footer-column p {
-    text-align: center; /* Κεντρικό ευθυγράμμιση για το κείμενο */
-    font-size: 14px;
-    line-height: 1.5;
-    color: #dcdada;
-    margin: 0;
-}
-
-/* Λίστα links */
 footer .footer-column ul {
     list-style: none;
     padding: 0;
-    text-align: center; /* Κεντρικό ευθυγράμμιση για τη λίστα */
 }
 
 footer .footer-column ul li {
     margin-bottom: 10px;
-    font-size: 14px;
 }
 
 footer .footer-column ul li a {
-    color: #1e90ff;
+    color: #fff;
     text-decoration: none;
     transition: color 0.3s;
 }
 
 footer .footer-column ul li a:hover {
-    color: #fff;
+    color: #1e90ff;
 }
 
-/* Social Media Icons */
 footer .social-icons {
-    margin-top: 10px;
+    margin-top: 0px;
 }
 
 footer .social-icons a {
@@ -94,21 +84,8 @@ footer .social-icons a:hover {
     color: #1e90ff;
 }
 
-/* Footer Bottom */
 footer p {
-    margin-top: 20px;
-    font-size: 12px;
+    margin-top: 10px;
+    font-size: 14px;
     color: #dcdada;
-}
-
-/* Responsive Design */
-@media only screen and (max-width: 768px) {
-    footer .footer-columns {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    footer .footer-column {
-        margin-bottom: 20px;
-    }
 }
