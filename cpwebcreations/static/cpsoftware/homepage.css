@@ -64,7 +64,7 @@ html {
 
 .message {
     display: none; /* Κρύβουμε το μήνυμα αρχικά */
-    margin-top: 30vw;
+    margin-top: 29vw;
     margin-left: 42vw;
     margin-right: 2vw;
     position: absolute;
@@ -87,7 +87,7 @@ html {
 }
 .message1 {
     display: none; /* Κρύβουμε το μήνυμα αρχικά */
-    margin-top: 74vw;
+    margin-top: 75vw;
     margin-left: 42vw;
     margin-right: 2vw;
     position: absolute;
@@ -110,7 +110,7 @@ html {
 }
 .message2 {
     display: none; /* Κρύβουμε το μήνυμα αρχικά */
-    margin-top: 130vw;
+    margin-top: 135vw;
     margin-left: 42vw;
     margin-right: 2vw;
     position: absolute;
@@ -322,14 +322,15 @@ html {
 #viwer {
     position: absolute;
     right: 3vw;
-    margin-top: 176vw;
+    margin-top: 181vw;
     background-color: rgb(197, 196, 196);
     color: black;
     padding: 10px 10px;
     border-radius: 8px;
-    width: 9vw;
-    height: 2vw;
+    width: 8.5vw;
+    height: 1.4vw;
     align-items: center; /* Κάθετη κεντράρισμα */
     justify-content: center; /* Οριζόντια κεντράρισμα */
     text-align: center; /* Σε περίπτωση που το κείμενο είναι πολύγραμμο */
+    font-size: 18px;
 }
