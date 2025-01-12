@@ -3,7 +3,7 @@ body {
     height: auto; 
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:cover;
     text-align: center;
 }
 
@@ -30,7 +30,7 @@ html {
 }
 
 .image {
-    width: 40vw;
+    width: 30%;
     height: auto;
     margin-top: 2%;
     margin-left: 5%;
@@ -318,7 +318,7 @@ html {
 #viwer {
     position: absolute;
     right: 3%;
-    margin-top: 183%;
+    margin-top: 180%;
     background-color: rgb(197, 196, 196);
     color: black;
     padding: 1rem;
@@ -332,19 +332,98 @@ html {
 }
 
 @media only screen and (max-width: 500px) and (min-width: 280px) {
-    .button, .button1, .button2, .button3 {
-        margin-left: 10%;
+    .image {
+        width: 70vw;
+        height: auto;
+    }
+    .Main_image1, .Main_image2, .Main_image3, .Main_image4 {
+        width: 85%;
+        height: auto;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .button {
+        margin-top: 5%;
+        font-size: 16px;
+        margin-left: 30px;
+        position:relative;
+        width: 50%;
+        height: auto;
+    }
+    .message {
+        font-size: 18px;
+        margin-left: 15px;
+        text-align: left;
+        position:relative;
+        margin-top:5%;
+    }
+    .button1 {
+        margin-top: 5%;
+        font-size: 16px;
+        margin-left: 30px;
+        position:relative;
+        width: 50%;
+        height: auto;
+    }
+    .message1 {
+        font-size: 18px;
+        margin-left: 15px;
+        text-align: left;
+        position:relative;
+        margin-top:5%;
+    }
+    .button2 {
+        margin-top: 5%;
+        font-size: 16px;
+        margin-left: 30px;
+        position:relative;
+        width: 50%;
+        height: auto;
+    }
+    .button3 {
+        margin-top: 5%;
+        font-size: 16px;
+        margin-left: 30px;
+        position:relative;
+        width: 50%;
+        height: auto;
+    }
+
+    .Main_image1  {
+        top: 10%;
+        position:relative;
+
+    }
+    .Main_image2 {
+        position: relative; /* Ακολουθεί τη φυσική ροή */
+        margin-top: 12vw;
+    }
+    .Main_image3  {
+        position: relative; /* Ακολουθεί τη φυσική ροή */
+        margin-top: 12vw;
+
+    }
+    .Main_image4  {
+        position: relative; /* Ακολουθεί τη φυσική ροή */
+        margin-top: 12vw;
+
+    }
+    .message2 {
+        font-size: 18px;
+        margin-left: 15px;
+        text-align: left;
+        position:relative;
+        margin-top:5%;
     }
 
     #viwer {
-        right: 3%;
-        margin-top: 175%;
+        position: relative;
+        font-size: 14px;
+        margin-top: 5%;
+        left: 70%;
         width: 20%;
         height: 2%;
-        font-size: 14px;
-        padding: 10px 10px;
+        padding: 4px 8px;
     }
-    .message1 {
-        margin-top: 68%;
-    }
+
 }

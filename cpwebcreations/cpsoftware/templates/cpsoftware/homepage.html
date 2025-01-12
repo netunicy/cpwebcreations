@@ -22,38 +22,71 @@
         <img class="image" src="{{i.image}}" >
     {% endfor %}
 
+    {% for i in image1 %}
+        <img src= "{{i.image}}" alt="Main Image" class='Main_image1'>
+    {% endfor %}
+
+    <a href="#" class="button" onclick="toggleMessage(event)">
+        Get Started
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M10 6l6 6-6 6V6z" />
+        </svg>
+    </a>
+
     <div class="message" id="message">
         {% for i in image1 %}
             {{ i.content|safe }}
         {% endfor %}
     </div>
 
+    {% for i in image2 %}
+        <img src= "{{i.image}}" alt="Main Image" class='Main_image2'>
+    {% endfor %}
+
+    <!-- Technologies Buttons -->
+    <a href="#" class="button1" onclick="toggleMessage1(event)">
+        Technologies
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M10 6l6 6-6 6V6z" />
+        </svg>
+    </a>
+
     <div class="message1" id="message1">
         {% for i in image2 %}
             {{ i.content|safe }}
         {% endfor %}
-        
         {% for i in tools %}
-            {% if i.image1 %}
-                <img src="{{ i.image1 }}" alt="Image 1" class="tools1">
-            {% endif %}
-            {% if i.image2 %}
-                <img src="{{ i.image2 }}" alt="Image 2" class="tools2">
-            {% endif %}
-            {% if i.image3 %}
-                <img src="{{ i.image3 }}" alt="Image 3" class="tools3">
-            {% endif %}
-            {% if i.image4 %}
-                <img src="{{ i.image4 }}" alt="Image 4" class="tools4">
-            {% endif %}
-            {% if i.image5 %}
-                <img src="{{ i.image5 }}" alt="Image 5" class="tools5">
-            {% endif %}
-            {% if i.image6 %}
-                <img src="{{ i.image6 }}" alt="Image 6" class="tools6">
-            {% endif %}
-        {% endfor %}
+        {% if i.image1 %}
+            <img src="{{ i.image1 }}" alt="Image 1" class="tools1">
+        {% endif %}
+        {% if i.image2 %}
+            <img src="{{ i.image2 }}" alt="Image 2" class="tools2">
+        {% endif %}
+        {% if i.image3 %}
+            <img src="{{ i.image3 }}" alt="Image 3" class="tools3">
+        {% endif %}
+        {% if i.image4 %}
+            <img src="{{ i.image4 }}" alt="Image 4" class="tools4">
+        {% endif %}
+        {% if i.image5 %}
+            <img src="{{ i.image5 }}" alt="Image 5" class="tools5">
+        {% endif %}
+        {% if i.image6 %}
+            <img src="{{ i.image6 }}" alt="Image 6" class="tools6">
+        {% endif %}
+    {% endfor %}
     </div>
+
+    {% for i in image3 %}
+        <img src= "{{i.image}}" alt="Main Image" class='Main_image3'>
+    {% endfor %}
+
+    <a href="#" class="button2" onclick="toggleMessage2(event)">
+        Services
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M10 6l6 6-6 6V6z"/>
+        </svg>
+    </a>
 
     <div class="message2" id="message2">
         {% for i in image3 %}
@@ -67,48 +100,10 @@
         {% endfor %}
     </div>
 
-    <a href="#" class="button" onclick="showMessage()">
-        Get Started
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M10 6l6 6-6 6V6z"/>
-        </svg>
-    </a>
+    {% for i in image4 %}
+        <img src= "{{i.image}}" alt="Main Image" class='Main_image4'>
+    {% endfor %}
 
-    <a href="#" class="button" onclick="toggleMessage(event)">
-        Get Started
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M10 6l6 6-6 6V6z"/>
-        </svg>
-    </a>
-
-    <!-- Technologies Buttons -->
-    <a href="#" class="button1" onclick="showMessage1()">
-        Technologies
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M10 6l6 6-6 6V6z"/>
-        </svg>
-    </a>
-
-    <a href="#" class="button1" onclick="toggleMessage1(event)">
-        Technologies
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M10 6l6 6-6 6V6z"/>
-        </svg>
-    </a>
-
-    <a href="#" class="button2" onclick="showMessage2()">
-        Services
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M10 6l6 6-6 6V6z"/>
-        </svg>
-    </a>
-
-    <a href="#" class="button2" onclick="toggleMessage2(event)">
-        Services
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M10 6l6 6-6 6V6z"/>
-        </svg>
-    </a>
 
     <a href="{% url 'contact_us' %}" class="button3">
         Contact Us
@@ -173,26 +168,9 @@
             }
         }
     </script>
-
-    {% for i in image1 %}
-        <img src= "{{i.image}}" alt="Main Image" class='Main_image1'>
-    {% endfor %}
-
-    {% for i in image2 %}
-        <img src= "{{i.image}}" alt="Main Image" class='Main_image2'>
-    {% endfor %}
-
-    {% for i in image3 %}
-        <img src= "{{i.image}}" alt="Main Image" class='Main_image3'>
-    {% endfor %}
-
-    {% for i in image4 %}
-        <img src= "{{i.image}}" alt="Main Image" class='Main_image4'>
-    {% endfor %}
-
+    
     {% include "footer.html" %}
 
-    
 </body>
 </html>
 {% endblock content %}
