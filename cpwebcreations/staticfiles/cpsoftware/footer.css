@@ -14,7 +14,7 @@ footer {
     color: #fff;
     padding: 20px 0; /* Padding πάνω και κάτω */
     text-align: center;
-    margin-top: 180vw; /* Αυτόματο κλείδωμα στο κάτω μέρος */
+    margin-top: auto; /* Αυτόματο κλείδωμα στο κάτω μέρος */
     width: 100%;
 }
 
@@ -27,7 +27,7 @@ footer .container {
 /* Στήλες footer */
 footer .footer-columns {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Κεντράρει τις στήλες */
     flex-wrap: wrap; /* Σπάει τις στήλες στις μικρές οθόνες */
     gap: 20px;
 }
@@ -36,7 +36,7 @@ footer .footer-columns {
 footer .footer-column {
     flex: 1 1 300px; /* Δυναμικό μέγεθος */
     margin: 10px 0; /* Απόσταση μεταξύ στηλών */
-    text-align: left;
+    text-align: center; /* Κεντρικό ευθυγράμμιση για το κείμενο */
 }
 
 /* Στυλ επικεφαλίδων */
@@ -48,7 +48,7 @@ footer .footer-column h3 {
 
 /* Κείμενο */
 footer .footer-column p {
-    text-align: justify;
+    text-align: center; /* Κεντρικό ευθυγράμμιση για το κείμενο */
     font-size: 14px;
     line-height: 1.5;
     color: #dcdada;
@@ -59,6 +59,7 @@ footer .footer-column p {
 footer .footer-column ul {
     list-style: none;
     padding: 0;
+    text-align: center; /* Κεντρικό ευθυγράμμιση για τη λίστα */
 }
 
 footer .footer-column ul li {
