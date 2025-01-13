@@ -24,8 +24,7 @@
     {% if messages %}
         <script>
             document.addEventListener("DOMContentLoaded", function () {
-                const message = "{{ messages|first }}";
-                alert(message);
+                alert("{{ messages|first|escapejs }}");
             });
         </script>
     {% endif %}
