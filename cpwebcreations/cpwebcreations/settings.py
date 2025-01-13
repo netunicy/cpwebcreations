@@ -155,10 +155,14 @@ TINYMCE_DEFAULT_CONFIG = {
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
-EMAIL_HOST_USER = '408cc504ce0765'
-EMAIL_HOST_PASSWORD = '76bcfec90e847b'  # Αντικατάστησε με το πραγματικό σου password
-EMAIL_PORT = 2525
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'live.smtp.mailtrap.io'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+EMAIL_HOST_USER = 'api'
+EMAIL_HOST_PASSWORD = '********dae0'
+DEFAULT_FROM_EMAIL = 'no-reply@cpsoftwarecreation.com'
 
 
 django_heroku.settings(locals())

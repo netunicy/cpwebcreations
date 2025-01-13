@@ -22,6 +22,15 @@
         <img class="image" src="{{i.image}}" >
     {% endfor %}
 
+    {% if messages %}
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const message = "{{ messages|first }}";
+                alert(message);
+            });
+        </script>
+    {% endif %}
+
     {% for i in image1 %}
         <img src= "{{i.image}}" alt="Main Image" class='Main_image1'>
     {% endfor %}

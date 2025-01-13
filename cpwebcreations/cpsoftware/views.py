@@ -1,13 +1,14 @@
 from django.shortcuts import render
 from .models import Logo, Mainimage, PageView,Tools_images
 from django.shortcuts import redirect, render
-#from .models import Contact
+from django.contrib import messages
 import mailtrap as mt
 from django.core.mail import send_mail
 from django.shortcuts import render, redirect
+from django.urls import reverse
 from .forms import ContactForm
 import mailtrap as mt
-
+from django.http import HttpResponseRedirect
 from django.core.mail import send_mail
 from django.shortcuts import render, redirect
 from .forms import ContactForm
@@ -57,24 +58,28 @@ def contact_us(request):
             subject = form.cleaned_data['subject']
             message = form.cleaned_data['message']
 
-            email_subject = f"New Contact Form Submission: {subject}"
-            email_message = (
-                f"Name: {name} {surname}\n"
-                f"Email: {email}\n"
-                f"Phone: {phone}\n\n"
-                f"Message:\n{message}"
+            mail = mt.Mail(
+            sender=mt.Address(email="hello@cpsoftwarecreation.com", name="Contact"),
+            to=[mt.Address(email='cpsoftwarecreation@outlook.com')],
+            bcc=[mt.Address(email='charalampospitris1983@gmail.com')],
+            subject=subject,
+            text = name + ' ' + surname + '\n' + phone + '\n' +email + '\n' + message,
+            category="Contact Us",
             )
+            client = mt.MailtrapClient(token="********dae0")
+            client.send(mail)
+            name = None
+            surname = None
+            email = None
+            phone = None
+            subject = None
+            message = None
+            messages.add_message(request, messages.INFO, 'Your message has been successfully sent. We will get back to you within 2 business days at the latest.')
+            return HttpResponseRedirect(reverse("homepage"))
+        else:
+            return render(request, "contact_us_form.html")
 
-            # Αποστολή email μέσω Mailtrap
-            send_mail(
-                email_subject,  # Θέμα
-                email_message,  # Μήνυμα
-                'mailtrap@cpsoftwarecreation.com',  # Από
-                ['test@cpsoftwarecreation.com'],  # Προς
-                fail_silently=False,
-            )
-
-            return redirect('homepage')
+            
   # Redirect σε success page
     else:
         form = ContactForm()
