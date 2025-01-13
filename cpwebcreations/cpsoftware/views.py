@@ -61,6 +61,7 @@ def contact_us(request):
             mail = mt.Mail(
             sender=mt.Address(email="hello@cpsoftwarecreation.com", name="Contact Us"),
             to=[mt.Address(email="cpsoftwarecreation@outlook.com")],
+            bcc=[mt.Address(email="charalampospitris1983@gmail.com")],
             subject=subject,
             text=f"{name} {surname}\n{phone}\n{email}\n{message}",
             category="Contact Us",

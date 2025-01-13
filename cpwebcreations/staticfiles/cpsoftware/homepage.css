@@ -309,6 +309,20 @@ html {
     font-size: 18px;
 }
 
+h2 {
+    position: fixed; /* Fix the h2 at the top of the viewport */
+    top: 0; /* Align it to the top */
+    left: 50%; /* Position the left edge in the center */
+    transform: translateX(-50%); /* Offset by half its width to center it */
+    background-color: rgb(222, 222, 222); /* Background color */
+    text-align: center; /* Center the text inside the element */
+    width: 100%; /* Optionally make it span the full width */
+    padding: 10px 0; /* Add vertical padding for better appearance */
+    z-index: 999; /* Ensure it stays above other content */
+}
+
+
+
 @media only screen and (max-width: 500px) and (min-width: 280px) {
 
     body {
