@@ -1,7 +1,8 @@
+
 body {
     background-image: url("https://res.cloudinary.com/hewckvlra/image/upload/v1736459239/back_vm8mib.jpg");
     height: auto; 
-    background-position: center;
+    background-position: inherit;
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
@@ -83,7 +84,7 @@ html {
     position: absolute;
     border-radius: 20px;
     left: 6vw !important;
-    top: 57vw !important;
+    top: 67vw !important;
 }
 .message1 {
     display: none; /* Κρύβουμε το μήνυμα αρχικά */
@@ -106,11 +107,11 @@ html {
     position: absolute;
     border-radius: 20px;
     left: 6vw !important;
-    top: 84vw !important;
+    top: 104vw !important;
 }
 .message2 {
-    display: none; /* Κρύβουμε το μήνυμα αρχικά */
-    margin-top: 135vw;
+    display: none;
+    margin-top: 137vw;
     margin-left: 42vw;
     margin-right: 2vw;
     position: absolute;
@@ -129,17 +130,7 @@ html {
     position: absolute;
     border-radius: 20px;
     left: 6vw !important;
-    top: 111vw !important;
-}
-
-.Main_image5 {
-    width: 15vw;
-    height: auto;
-    position: absolute;
-    border-radius: 20px;
-    left: 12vw !important;
-    top: 140vw !important;
-    bottom: 10vw;
+    top: 142vw !important;
 }
 
 .button {
@@ -200,7 +191,7 @@ html {
     transition: background-color 0.3s ease;
     width: auto;
     height: auto;
-    top: 79vw;
+    top: 89vw;
     left: 6vw;
     z-index: 10;
     gap: 10px;
@@ -240,7 +231,7 @@ html {
     transition: background-color 0.3s ease;
     width: auto;
     height: auto;
-    top: 106vw;
+    top: 126vw;
     left: 6vw;
     z-index: 10;
     gap: 10px;
@@ -280,7 +271,7 @@ html {
     transition: background-color 0.3s ease;
     width: auto;
     height: auto;
-    top: 133vw;
+    top: 164vw;
     left: 6vw;
     z-index: 10;
     gap: 10px;
@@ -302,27 +293,10 @@ html {
     transform: translateX(5px);
 }
 
-.contact_detail a {
-    font-size: 20px;
-    color: rgb(0, 0, 0);
-    font-weight: bold;
-}
-
-.contact_details {
-    position: absolute;
-    margin-top:150vw;
-    margin-bottom: 10vw;
-    background-color: #bebebe;
-    padding: 20px 20px;
-    border-radius: 3%;
-    left: 6vw !important;
-    text-align: left;
-}
-
 #viwer {
     position: absolute;
-    right: 3vw;
-    margin-top: 181vw;
+    left: 7vw;
+    margin-top: 178vw;
     background-color: rgb(197, 196, 196);
     color: black;
     padding: 10px 10px;
@@ -333,4 +307,154 @@ html {
     justify-content: center; /* Οριζόντια κεντράρισμα */
     text-align: center; /* Σε περίπτωση που το κείμενο είναι πολύγραμμο */
     font-size: 18px;
+}
+
+@media only screen and (max-width: 500px) and (min-width: 280px) {
+
+    body {
+        height: 0% !important; 
+    }
+    .image {
+        width: 60vw;
+        height: auto;
+        position: absolute;
+        left: 5%;
+        top: 5%;
+    }
+
+    .Main_image1 {
+        position: inherit;
+        margin-top: 50% !important;
+        width: 87%;
+        height: auto;
+        margin: 0 auto;
+        border-radius: 20px;
+    }
+    .button {
+        position: inherit;
+        font-size: 4vw;
+        margin-top: 5% !important;
+        padding: 5px 5px;
+        margin-left: 7% !important;
+        margin: auto;
+
+    }
+    .message {
+        position:inherit !important;
+        margin-top: 5% !important;
+        margin-left: 2% !important;
+        right: 5px !important;
+        width: 100%;
+        font-size: 5vw;
+        text-align: left;
+        line-height: 1.3;
+        padding: 0 2%;
+        margin: 0%;
+    }
+    .Main_image2 {
+        position: inherit;
+        margin-top: 11% !important;
+        width: 87%;
+        height: auto;
+        margin: 0 auto;
+        border-radius: 20px;
+    }
+    .button1 {
+        position: inherit;
+        font-size: 4vw;
+        margin-top: 5% !important;
+        padding: 5px 5px;
+        margin-left: 7% !important;
+        margin: auto;
+    }
+    .message1 {
+        position:inherit !important;
+        margin-top: 5% !important;
+        margin-left: 2% !important;
+        right: 5px !important;
+        width: 100%;
+        font-size: 5vw;
+        text-align: left;
+        line-height: 1.3;
+        padding: 0 2%;
+        margin: 0%;
+    }
+    .Main_image3 {
+        position: inherit;
+        margin-top: 16% !important;
+        width: 87%;
+        height: auto;
+        margin: 0 auto;
+        border-radius: 20px;
+    }
+    .message2 {
+        position:inherit !important;
+        margin-top: 5% !important;
+        margin-left: 2% !important;
+        right: 5px !important;
+        width: 100%;
+        font-size: 5vw;
+        text-align: left;
+        line-height: 1.3;
+        padding: 0 2%;
+        margin: 0%;
+    }
+    .button2 {
+        position: inherit;
+        font-size: 4vw;
+        margin-top: 5% !important;
+        padding: 5px 5px;
+        margin-left: 7% !important;
+        margin: auto;
+    }
+    .Main_image4 {
+        position: inherit;
+        margin-top: 17% !important;
+        width: 87%;
+        height: auto;
+        margin: 0 auto;
+        border-radius: 20px;
+    }
+    .button3 {
+        position: inherit;
+        font-size: 4vw;
+        margin-top: 5% !important;
+        padding: 5px 5px;
+        margin-left: 7% !important;
+        margin: auto;
+    }
+    #viwer {
+        position: absolute;
+        height: auto;
+        width: auto;
+        margin-top: 5% !important;
+        margin-left: 53%;
+        background-color: #fff;
+
+    }
+    .tools1, .tools3 {
+        width: 10%; /* Πλάτος 3cm */
+        height: auto; /* Ύψος 3cm */
+        margin: auto;
+    }
+    
+    .tools2{
+        width: 12%; /* Πλάτος 3cm */
+        height: auto; /* Ύψος 3cm */
+    }
+    
+    .tools5, .tools6 {
+        width: 12%; /* Πλάτος 3cm */
+        height: auto; /* Ύψος 3cm */
+    }
+    
+    .tools4 {
+        width: 13%; /* Πλάτος 3cm */
+        height: auto; /* Ύψος 3cm */
+    }
+    
+    .tools6 {
+        width: 17%; /* Πλάτος 3cm */
+        height: auto; /* Ύψος 3cm */
+    }
 }
