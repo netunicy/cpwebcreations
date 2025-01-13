@@ -59,14 +59,14 @@ def contact_us(request):
             message = form.cleaned_data['message']
 
             mail = mt.Mail(
-            sender=mt.Address(email="hello@cpsoftwarecreation.com", name="Contact"),
-            to=[mt.Address(email='cpsoftwarecreation@outlook.com')],
-            bcc=[mt.Address(email='charalampospitris1983@gmail.com')],
+            sender=mt.Address(email="hello@cpsoftwarecreation.com", name="Contact Us"),
+            to=[mt.Address(email="cpsoftwarecreation@outlook.com")],
             subject=subject,
-            text = name + ' ' + surname + '\n' + phone + '\n' +email + '\n' + message,
+            text=f"{name} {surname}\n{phone}\n{email}\n{message}",
             category="Contact Us",
             )
-            client = mt.MailtrapClient(token="********dae0")
+
+            client = mt.MailtrapClient(token="386e1cd7d9a0bf8c155fa1204e037903")
             client.send(mail)
             name = None
             surname = None
@@ -75,9 +75,9 @@ def contact_us(request):
             subject = None
             message = None
             messages.add_message(request, messages.INFO, 'Your message has been successfully sent. We will get back to you within 2 business days at the latest.')
-            return HttpResponseRedirect(reverse("homepage"))
+            return render(request, "homepage.html", {"message": message})
         else:
-            return render(request, "contact_us_form.html")
+            return render(request, "contact_us_form.html", {"form": form})
 
             
   # Redirect σε success page

@@ -7,7 +7,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 with open(os.path.join(BASE_DIR,'secret_key.txt')) as f:
     SECRET_KEY = f.read().strip()
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*','127.0.0.1:8000','localhost','www.cpsoftwarecreation.com','cpsoftwarecreation.com','cpcreation-e0a98ac3c27d.herokuapp.com']
 
@@ -115,19 +115,19 @@ STATICFILES_DIRS = [
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-SESSION_COOKIE_HTTPONLY = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SECURE_SSL_REDIRECT = True
-SECURE_HSTS_SECONDS= 31536000
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_HSTS_PRELOAD = True
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+#SESSION_COOKIE_HTTPONLY = True
+#SESSION_COOKIE_SECURE = True
+#CSRF_COOKIE_SECURE = True
+#SECURE_SSL_REDIRECT = True
+#SECURE_HSTS_SECONDS= 31536000
+#SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+#SECURE_HSTS_PRELOAD = True
+#SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+#SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.random_char_challenge'  # Default είναι τυχαία γράμματα
 CAPTCHA_LENGTH = 6  # Μήκος του CAPTCHA
-CAPTCHA_IMAGE_SIZE = (150, 50)  # Διαστάσεις εικόνας
+CAPTCHA_IMAGE_SIZE = (170, 50)  # Διαστάσεις εικόνας
 CAPTCHA_FONT_SIZE = 36  # Μέγεθος γραμματοσειράς
 CAPTCHA_TIMEOUT = 5  # Διάρκεια ισχύος CAPTCHA σε λεπτά
 
@@ -161,7 +161,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_HOST_USER = 'api'
-EMAIL_HOST_PASSWORD = '********dae0'
+EMAIL_HOST_PASSWORD = '386e1cd7d9a0bf8c155fa1204e037903'
 DEFAULT_FROM_EMAIL = 'no-reply@cpsoftwarecreation.com'
 
 
