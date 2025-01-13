@@ -22,11 +22,12 @@
         <img class="image" src="{{i.image}}" >
     {% endfor %}
     {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-                <h2 {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</h2>
-            {% endfor %}
-        </ul>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const message = "{{ messages|first }}";
+                alert(message);
+            });
+        </script>
     {% endif %}
 
     {% for i in image1 %}
