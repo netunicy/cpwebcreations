@@ -1,4 +1,5 @@
 from pathlib import Path
+from django.shortcuts import redirect
 import base64
 BASE_DIR = Path(__file__).resolve().parent.parent
 from .models import Logo, Mainimage,Tools_images
@@ -82,7 +83,7 @@ def contact_us(request):
 
                 # Εμφάνιση μηνύματος επιτυχίας
                 messages.add_message(request, messages.INFO, 'Your message has been successfully sent. We will get back to you within 2 business days at the latest.')
-                return render(request, "homepage.html", {"message": message})
+                return redirect('homepage')
 
             except Exception as e:
                 form.add_error(None, f"Failed to send email: {str(e)}")
