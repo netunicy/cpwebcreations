@@ -50,7 +50,7 @@ def contact_us(request):
             uploaded_file = form.cleaned_data['file']
             if not uploaded_file.name.endswith('.pdf'):
                 form.add_error('file', 'The file must be in PDF format.')
-                return render(request, 'upload.html', {'form': form})
+                return render(request, 'contact_us_form.html', {'form': form})
             mail = mt.Mail(
             sender=mt.Address(email="hello@cpsoftwarecreation.com", name="Contact Us"),
             to=[mt.Address(email="cpsoftwarecreation@outlook.com")],
