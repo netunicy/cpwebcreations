@@ -47,6 +47,7 @@ def contact_us(request):
             phone = form.cleaned_data.get('phone', 'N/A')
             subject = form.cleaned_data['subject']
             message = form.cleaned_data['message']
+            uploaded_file = form.cleaned_data['file']
 
             mail = mt.Mail(
             sender=mt.Address(email="hello@cpsoftwarecreation.com", name="Contact Us"),
@@ -56,7 +57,7 @@ def contact_us(request):
             text=f"{name} {surname}\n{phone}\n{email}\n{message}",
             category="Contact Us",
             )
-
+            mail.attachments = [uploaded_file]
             client = mt.MailtrapClient(token="386e1cd7d9a0bf8c155fa1204e037903")
             client.send(mail)
             name = None
