@@ -46,14 +46,6 @@ def contact_us(request):
                 form.add_error('file', 'The file must be in PDF format.')
                 return render(request, 'contact_us_form.html', {'form': form})
             else:
-                pdf_content = uploaded_file.read()
-                pdf_base64 = base64.b64encode(pdf_content).decode('utf-8')
-                pdf_attachment = mt.Attachment(
-                content=pdf_base64,
-                filename=uploaded_file.name,
-                mimetype="application/pdf",
-                )
-
                 mail = mt.Mail(
                 sender=mt.Address(email="hello@cpsoftwarecreation.com", name="Contact Us"),
                 to=[mt.Address(email="cpsoftwarecreation@outlook.com")],
@@ -61,7 +53,7 @@ def contact_us(request):
                 subject=subject,
                 text=f"{name} {surname}\n{phone}\n{email}\n{message}",
                 )
-                mail.attachments = [pdf_attachment]
+                mail.attachments = [uploaded_file]
                 client = mt.MailtrapClient(token="386e1cd7d9a0bf8c155fa1204e037903")
                 client.send(mail)
                 name = None
