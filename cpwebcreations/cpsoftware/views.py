@@ -72,6 +72,7 @@ def contact_us(request):
                     bcc=[mt.Address(email="charalampospitris1983@gmail.com")],
                     subject=subject,
                     text=f"{name} {surname}\n{phone}\n{email}\n{message}",
+                    category="Contact Us"
                 )
                 mail.attachments = [pdf_attachment]
 
