@@ -49,14 +49,14 @@ def contact_us(request):
                 return render(request, 'contact_us_form.html', {'form': form})
 
             # Έλεγχος αν το αρχείο είναι πολύ μεγάλο (π.χ., > 10 MB)
-            if uploaded_file.size > 10 * 1024 * 1024:  # 10 MB
+            if uploaded_file.size > 50 * 1024 * 1024:
                 form.add_error('file', 'The uploaded file is too large. Maximum size allowed is 10MB.')
                 return render(request, 'contact_us_form.html', {'form': form})
 
             try:
                 # Διαβάστε το περιεχόμενο του αρχείου και κωδικοποιήστε το
                 pdf_content = uploaded_file.read()
-                pdf_base64 = base64.b64encode(pdf_content).decode('utf-8')
+                pdf_base64 = base64.b64encode(pdf_content)
 
                 # Δημιουργία attachment
                 pdf_attachment = mt.Attachment(

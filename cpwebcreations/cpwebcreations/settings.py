@@ -167,6 +167,11 @@ EMAIL_HOST_USER = 'api'
 EMAIL_HOST_PASSWORD = '386e1cd7d9a0bf8c155fa1204e037903'
 DEFAULT_FROM_EMAIL = 'no-reply@cpsoftwarecreation.com'
 
+# Μέγιστο μέγεθος δεδομένων που επιτρέπεται να ανέβει
+DATA_UPLOAD_MAX_MEMORY_SIZE = 50 * 1024 * 1024  # 50 MB
+
+# Μέγιστο μέγεθος ενός μεμονωμένου αρχείου
+FILE_UPLOAD_MAX_MEMORY_SIZE = 50 * 1024 * 1024  # 50 MB
 
 django_heroku.settings(locals())
 
