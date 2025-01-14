@@ -51,7 +51,7 @@ def contact_us(request):
             if not uploaded_file.name.endswith('.pdf'):
                 form.add_error('file', 'The file must be in PDF format.')
                 return render(request, 'contact_us_form.html', {'form': form})
-            if uploaded_file:
+            else:
                 mail = mt.Mail(
                 sender=mt.Address(email="hello@cpsoftwarecreation.com", name="Contact Us"),
                 to=[mt.Address(email="cpsoftwarecreation@outlook.com")],
@@ -71,9 +71,6 @@ def contact_us(request):
                 message = None
                 messages.add_message(request, messages.INFO, 'Your message has been successfully sent. We will get back to you within 2 business days at the latest.')
                 return render(request, "homepage.html", {"message": message})
-            else:
-                form.add_error('file', 'The file must be in PDF format.')
-                return render(request, 'contact_us_form.html', {'form': form})
         else:
             return render(request, "contact_us_form.html", {"form": form})
 
