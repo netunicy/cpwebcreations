@@ -1,8 +1,8 @@
 import os
 import django_heroku
+from pathlib import Path
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 with open(os.path.join(BASE_DIR,'secret_key.txt')) as f:
     SECRET_KEY = f.read().strip()
@@ -115,6 +115,9 @@ STATICFILES_DIRS = [
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 SESSION_COOKIE_HTTPONLY = True
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
@@ -127,7 +130,7 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.random_char_challenge'  # Default είναι τυχαία γράμματα
 CAPTCHA_LENGTH = 6  # Μήκος του CAPTCHA
-CAPTCHA_IMAGE_SIZE = (170, 50)  # Διαστάσεις εικόνας
+CAPTCHA_IMAGE_SIZE = (200, 50)  # Διαστάσεις εικόνας
 CAPTCHA_FONT_SIZE = 36  # Μέγεθος γραμματοσειράς
 CAPTCHA_TIMEOUT = 5  # Διάρκεια ισχύος CAPTCHA σε λεπτά
 

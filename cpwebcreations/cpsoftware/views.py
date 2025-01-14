@@ -38,7 +38,7 @@ def homepage(request):
 
 def contact_us(request):
     if request.method == 'POST':
-        form = ContactForm(request.POST)
+        form = ContactForm(request.POST, request.FILES)
         if form.is_valid():
             # Ανάκτηση δεδομένων φόρμας
             name = form.cleaned_data['name']
@@ -47,29 +47,31 @@ def contact_us(request):
             phone = form.cleaned_data.get('phone', 'N/A')
             subject = form.cleaned_data['subject']
             message = form.cleaned_data['message']
-            uploaded_file = form.cleaned_data['file']
-            if not uploaded_file.name.endswith('.pdf'):
+            uploaded_file = form.cleaned_data.get('file')
+            print(uploaded_file)
+            if uploaded_file:
+                mail = mt.Mail(
+                sender=mt.Address(email="hello@cpsoftwarecreation.com", name="Contact Us"),
+                to=[mt.Address(email="cpsoftwarecreation@outlook.com")],
+                bcc=[mt.Address(email="charalampospitris1983@gmail.com")],
+                subject=subject,
+                text=f"{name} {surname}\n{phone}\n{email}\n{message}",
+                category="Contact Us",
+                )
+                mail.attachments = [uploaded_file]
+                client = mt.MailtrapClient(token="386e1cd7d9a0bf8c155fa1204e037903")
+                client.send(mail)
+                name = None
+                surname = None
+                email = None
+                phone = None
+                subject = None
+                message = None
+                messages.add_message(request, messages.INFO, 'Your message has been successfully sent. We will get back to you within 2 business days at the latest.')
+                return render(request, "homepage.html", {"message": message})
+            else:
                 form.add_error('file', 'The file must be in PDF format.')
                 return render(request, 'contact_us_form.html', {'form': form})
-            mail = mt.Mail(
-            sender=mt.Address(email="hello@cpsoftwarecreation.com", name="Contact Us"),
-            to=[mt.Address(email="cpsoftwarecreation@outlook.com")],
-            bcc=[mt.Address(email="charalampospitris1983@gmail.com")],
-            subject=subject,
-            text=f"{name} {surname}\n{phone}\n{email}\n{message}",
-            category="Contact Us",
-            )
-            mail.attachments = [uploaded_file]
-            client = mt.MailtrapClient(token="386e1cd7d9a0bf8c155fa1204e037903")
-            client.send(mail)
-            name = None
-            surname = None
-            email = None
-            phone = None
-            subject = None
-            message = None
-            messages.add_message(request, messages.INFO, 'Your message has been successfully sent. We will get back to you within 2 business days at the latest.')
-            return render(request, "homepage.html", {"message": message})
         else:
             return render(request, "contact_us_form.html", {"form": form})
 

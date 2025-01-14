@@ -11,7 +11,7 @@
 <body>
     <a class="button3" href="{% url 'homepage' %}" ></i></i>Homepage</a>
     <div class="container">
-        <form method="post" id="contact">
+        <form method="post" id="contact" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}  <!-- Αυτό κάνει render όλα τα πεδία της φόρμας, συμπεριλαμβανομένου του CAPTCHA -->
             <fieldset>
