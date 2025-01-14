@@ -20,8 +20,9 @@
     {% for i in logo %}
         <img class="image" src="{{i.image}}" >
     {% endfor %}
+
     {% if messages %}
-        <ul class="messages">
+        <ul class="success_messages">
             {% for message in messages %}
                 <h2 {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</h2>
             {% endfor %}
