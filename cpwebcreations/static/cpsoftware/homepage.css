@@ -14,16 +14,6 @@ html {
     margin: 0;
 }
 
-.success_messages {
-    display: none; /* Κρυφό από προεπιλογή */
-    position: relative; /* Βεβαιωθείτε ότι είναι σχετικό */
-    z-index: 10; /* Προσαρμόστε το z-index αν χρειάζεται */
-    background-color: white; /* Προσθέστε φόντο αν θέλετε */
-    padding: 10px;
-    border: 1px solid #ccc;
-    max-width: 500px; /* Ρυθμίστε το μέγεθος */
-}
-
 .image {
     width: 35vw;
     height: auto;
