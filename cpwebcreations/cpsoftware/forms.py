@@ -8,5 +8,6 @@ class ContactForm(forms.Form):
     phone = forms.CharField(max_length=50, required=True, label="Phone Number")
     subject = forms.CharField(max_length=100, required=True, label="Subject")
     message = forms.CharField(widget=forms.Textarea, required=True, label="Message")
-    file = forms.FileField(required=False)
+    file = forms.FileField(required=False, label="Upload Your Drawing (PDF only)",
+                           help_text="Please upload a PDF file (e.g., design blueprint) to assist us in preparing your offer.",)
     captcha = CaptchaField(label="Type the latters")
