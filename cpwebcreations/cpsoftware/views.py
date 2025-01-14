@@ -21,9 +21,9 @@ def homepage(request):
     image3 = Mainimage.objects.filter(id=2).values()
     image4 = Mainimage.objects.filter(id=3).values()
     image5 = Mainimage.objects.filter(id=4).values()
-    viewer, created = PageView.objects.get_or_create(pk=1)
-    viewer.homepage_view_count += 1
-    viewer.save()
+    #viewer, created = PageView.objects.get_or_create(pk=1)
+    #viewer.homepage_view_count += 1
+    #viewer.save()
 
     context={
         'logo':image1,
@@ -31,20 +31,10 @@ def homepage(request):
         'image2':image3,
         'image3':image4,
         'image4':image5,
-        'viewer': viewer.homepage_view_count,
+        #'viewer': viewer.homepage_view_count,
         'tools':tools,
     }
     return render(request,'homepage.html',context)
-
-
-def aboutus(request):
-    #about_us=Aboutus.objects.all().values()
-    image=Logo.objects.all().values()
-    context = {
-        #'about_us':about_us,
-        'logo':image,
-    }
-    return render(request,'about_us.html',context)
 
 def contact_us(request):
     if request.method == 'POST':
