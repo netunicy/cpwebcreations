@@ -1,17 +1,11 @@
+from pathlib import Path
+import base64
+BASE_DIR = Path(__file__).resolve().parent.parent
+from .models import Logo, Mainimage,Tools_images
 from django.shortcuts import render
-from .models import Logo, Mainimage, PageView,Tools_images
-from django.shortcuts import redirect, render
 from django.contrib import messages
-import mailtrap as mt
-from django.core.mail import send_mail
-from django.shortcuts import render, redirect
-from django.urls import reverse
 from .forms import ContactForm
 import mailtrap as mt
-from django.http import HttpResponseRedirect
-from django.core.mail import send_mail
-from django.shortcuts import render, redirect
-from .forms import ContactForm
 
 
 def homepage(request):
@@ -52,6 +46,14 @@ def contact_us(request):
                 form.add_error('file', 'The file must be in PDF format.')
                 return render(request, 'contact_us_form.html', {'form': form})
             else:
+                pdf_content = uploaded_file.read()  # Διαβάζει το περιεχόμενο του αρχείου
+                pdf_base64 = base64.b64encode(pdf_content).decode('utf-8')  # Κωδικοποίηση σε Base64
+                pdf_attachment = mt.Attachment(
+                content=pdf_base64,
+                filename=uploaded_file.name,
+                mimetype="application/pdf",
+                )
+
                 mail = mt.Mail(
                 sender=mt.Address(email="hello@cpsoftwarecreation.com", name="Contact Us"),
                 to=[mt.Address(email="cpsoftwarecreation@outlook.com")],
@@ -60,7 +62,7 @@ def contact_us(request):
                 text=f"{name} {surname}\n{phone}\n{email}\n{message}",
                 category="Contact Us",
                 )
-                mail.attachments = [uploaded_file]
+                mail.attachments = [pdf_attachment]
                 client = mt.MailtrapClient(token="386e1cd7d9a0bf8c155fa1204e037903")
                 client.send(mail)
                 name = None
