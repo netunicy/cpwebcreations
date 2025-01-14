@@ -163,7 +163,7 @@ EMAIL_HOST = 'live.smtp.mailtrap.io'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
-EMAIL_HOST_USER = 'apismtp@mailtrap.io'
+EMAIL_HOST_USER = 'smtp@mailtrap.io'
 EMAIL_HOST_PASSWORD = '386e1cd7d9a0bf8c155fa1204e037903'
 DEFAULT_FROM_EMAIL = 'no-reply@cpsoftwarecreation.com'
 
