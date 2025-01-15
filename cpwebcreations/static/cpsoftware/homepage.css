@@ -469,8 +469,10 @@ h2 {
         height: auto; /* Ύψος 3cm */
     }
     h2 {
+        position: absolute;
         font-size: 16px; /* Slightly smaller font size for smaller screens */
         padding: 8px; /* Reduce padding for compact design */
         margin: 8px auto; /* Adjust margin for spacing on small screens */
+        margin-top: 20%;
     }
 }
