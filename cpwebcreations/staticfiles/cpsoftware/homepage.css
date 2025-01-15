@@ -310,6 +310,7 @@ html {
 }
 
 h2 {
+    margin-top: 2%;
     text-align: center;
     font-size: 18px;
     background-color: rgb(235, 235, 235); /* Light gray background */
@@ -319,6 +320,13 @@ h2 {
     border-radius: 12px; /* Rounded corners */
     display: inline-block; /* Ensure the background only covers the text */
 }
+.success_messages .short-message {
+    display: none; /* Hide the short message by default */
+}
+
+.success_messages .full-message {
+    display: inline; /* Show the full message by default */
+}
 
 @media only screen and (max-width: 500px) and (min-width: 280px) {
 
@@ -326,16 +334,17 @@ h2 {
         height: 0% !important; 
     }
     .image {
-        width: 60vw;
+        width: 50vw;
         height: auto;
-        position: absolute;
+        position: relative;
         left: 5%;
-        top: 5%;
+        margin-top: 20%;
+        bottom: 10%;
     }
 
     .Main_image1 {
         position: inherit;
-        margin-top: 50% !important;
+        margin-top: 20% !important;
         width: 87%;
         height: auto;
         margin: 0 auto;
@@ -469,10 +478,29 @@ h2 {
         height: auto; /* Ύψος 3cm */
     }
     h2 {
-        position: absolute;
-        font-size: 16px; /* Slightly smaller font size for smaller screens */
-        padding: 8px; /* Reduce padding for compact design */
-        margin: 8px auto; /* Adjust margin for spacing on small screens */
-        margin-top: 20%;
+        font-size: 14px; /* Slightly smaller font size */
+    }
+    h2 {
+        position: absolute; /* Χρήση απόλυτης θέσης */
+        top: 5%; /* Τοποθέτηση στη μέση του ύψους */
+        left: 50%; /* Τοποθέτηση στη μέση του πλάτους */
+        transform: translate(-50%, -50%); /* Μετακίνηση για κεντράρισμα */
+        text-align: center; /* Κεντράρισμα του κειμένου */
+        font-size: 14px; /* Μέγεθος γραμματοσειράς */
+        background-color: rgb(235, 235, 235); /* Ανοιχτό γκρι φόντο */
+        font-weight: bold; /* Έντονο κείμενο */
+        padding: 5px; /* Εσωτερικό padding για το κείμενο */
+        margin: 0; /* Αφαίρεση περιθωρίων */
+        border-radius: 12px; /* Στρογγυλεμένες γωνίες */
+        display: inline-block; /* Το φόντο να καλύπτει μόνο το κείμενο */
+        white-space: nowrap; /* Να μην κάνει wrap το κείμενο */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Προαιρετική σκιά για αισθητική */
+    }
+    .success_messages .short-message {
+        display: inline;
+        
+    }
+    .success_messages .full-message {
+        display: none; /* Hide the full message on small screens */
     }
 }

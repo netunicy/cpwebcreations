@@ -22,11 +22,14 @@
     {% endfor %}
 
     {% if messages %}
-        <ul class="success_messages">
-            {% for message in messages %}
-                <h2 {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</h2>
-            {% endfor %}
-        </ul>
+    <ul class="success_messages">
+        {% for message in messages %}
+            <h2 {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                <span class="full-message">{{ message }}</span>
+                <span class="short-message">Your message has been successfully sent.</span>
+            </h2>
+        {% endfor %}
+    </ul>
     {% endif %}
 
     {% for i in image1 %}
