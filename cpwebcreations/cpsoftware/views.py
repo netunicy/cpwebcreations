@@ -6,6 +6,7 @@ from .models import Logo, Mainimage,Tools_images
 from django.shortcuts import render
 from django.contrib import messages
 from .forms import ContactForm
+from .models import PageView
 import mailtrap as mt
 
 
@@ -16,9 +17,9 @@ def homepage(request):
     image3 = Mainimage.objects.filter(id=2).values()
     image4 = Mainimage.objects.filter(id=3).values()
     image5 = Mainimage.objects.filter(id=4).values()
-    #viewer, created = PageView.objects.get_or_create(pk=1)
-    #viewer.homepage_view_count += 1
-    #viewer.save()
+    viewer, created = PageView.objects.get_or_create(pk=1)
+    viewer.homepage_view_count += 1
+    viewer.save()
 
     context={
         'logo':image1,
