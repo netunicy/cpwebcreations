@@ -12,7 +12,7 @@ footer {
     color: #fff;
     padding: 10px 0;
     text-align: center;
-    margin-top: 185vw; /* Automatically pushes the footer to the bottom */
+    margin-top: 190vw; /* Automatically pushes the footer to the bottom */
     width: 100%; /* Ensures the footer spans the entire width */
     height: 90%;
 }
