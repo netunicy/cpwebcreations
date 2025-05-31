@@ -11,26 +11,7 @@ import mailtrap as mt
 
 
 def homepage(request):
-    image1=Logo.objects.all().values()
-    tools=Tools_images.objects.all().values()
-    image2 = Mainimage.objects.filter(id=1).values()
-    image3 = Mainimage.objects.filter(id=2).values()
-    image4 = Mainimage.objects.filter(id=3).values()
-    image5 = Mainimage.objects.filter(id=4).values()
-    viewer, created = PageView.objects.get_or_create(pk=1)
-    viewer.homepage_view_count += 1
-    viewer.save()
-
-    context={
-        'logo':image1,
-        'image1':image2,
-        'image2':image3,
-        'image3':image4,
-        'image4':image5,
-        #'viewer': viewer.homepage_view_count,
-        'tools':tools,
-    }
-    return render(request,'homepage.html',context)
+    return render(request,'homepage.html')
 
 def contact_us(request):
     if request.method == 'POST':

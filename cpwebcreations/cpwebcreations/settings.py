@@ -54,28 +54,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'cpwebcreations.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd9d4j1asu66b4j', 
-        'USER': 'uasshhebnq6jko',
-        'PASSWORD': 'p07cf56f14d97d9164111b8380d35671b5ae0764a64cbd04919f018f507a61271',
-        'HOST': 'clhtb6lu92mj2.cluster-czz5s0kz4scl.eu-west-1.rds.amazonaws.com', 
-        'PORT': '5432',
-        'OPTIONS': {
-            'options': '-c timezone=Europe/Athens',
-            }
-    }
-}
-
-
-# Password validation
-# https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
