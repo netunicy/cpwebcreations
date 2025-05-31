@@ -2,11 +2,9 @@ from pathlib import Path
 from django.shortcuts import redirect
 import base64
 BASE_DIR = Path(__file__).resolve().parent.parent
-from .models import Logo, Mainimage,Tools_images
 from django.shortcuts import render
 from django.contrib import messages
 from .forms import ContactForm
-from .models import PageView
 import mailtrap as mt
 
 
