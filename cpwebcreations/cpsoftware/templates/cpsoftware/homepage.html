@@ -17,9 +17,8 @@
     </head>
 
 <body>
-    {% for i in logo %}
-        <img class="image" src="{{i.image}}" >
-    {% endfor %}
+
+    <img class="image" src="https://res.cloudinary.com/hotitu8ux/image/upload/v1748721533/logo_qbhepr.png" >
 
     {% if messages %}
     <ul class="success_messages">
@@ -32,9 +31,9 @@
     </ul>
     {% endif %}
 
-    {% for i in image1 %}
-        <img src= "{{i.image}}" alt="Main Image" class='Main_image1'>
-    {% endfor %}
+    
+    <img src= "https://res.cloudinary.com/hotitu8ux/image/upload/v1748721742/Main_Image_tcz6ys.jpg" alt="Main Image" class='Main_image1'>
+
 
     <a href="#" class="button" onclick="toggleMessage(event)">
         Get Started
@@ -44,14 +43,33 @@
     </a>
 
     <div class="message" id="message">
-        {% for i in image1 %}
-            {{ i.content|safe }}
-        {% endfor %}
+        <h1>Get Started</h1>
+        <p>Ready to bring your ideas to life?
+        At CP Software Creation, we design and build custom websites and applications tailored 
+        to your specific needs. Whether you’re a freelancer, a small business, or a growing organisation,
+        we’re here to help you stand out online with reliable and user-friendly solutions.</p>
+
+        <p>Let’s turn your vision into reality – step by step, with clarity and care.</p>
+        <h1 id='h2'>How to get started:</h1>
+        <p>You can request a quote by filling out our contact form with your basic details.</p>
+        <p>For a more targeted proposal, feel free to attach a PDF plan describing:</p>
+        <ul>
+            <li>How you’d like it to function</li>
+            <li>How you envision its layout and overall look</li>
+            <li>The content you want your website to include</li>
+        </ul>
+
+        <p>Once we review your material, we will send you a detailed quote within 5 business days at 
+            the latest.</p>
+
+        <p>Alternatively, you can contact us to arrange a free personal consultation (by phone or video 
+            call), where we’ll discuss your needs in detail with no obligation or cost.</p>
+
+        <p><strong>Start your journey with us today.</strong></p>
     </div>
 
-    {% for i in image2 %}
-        <img src= "{{i.image}}" alt="Main Image" class='Main_image2'>
-    {% endfor %}
+    
+    <img src= "https://res.cloudinary.com/hotitu8ux/image/upload/v1748723851/tools_dio2qq.jpg" alt="Main Image" class='Main_image2'>
 
     <!-- Technologies Buttons -->
     <a href="#" class="button1" onclick="toggleMessage1(event)">
@@ -62,34 +80,39 @@
     </a>
 
     <div class="message1" id="message1">
-        {% for i in image2 %}
-            {{ i.content|safe }}
-        {% endfor %}
-        {% for i in tools %}
-        {% if i.image1 %}
-            <img src="{{ i.image1 }}" alt="Image 1" class="tools1">
-        {% endif %}
-        {% if i.image2 %}
-            <img src="{{ i.image2 }}" alt="Image 2" class="tools2">
-        {% endif %}
-        {% if i.image3 %}
-            <img src="{{ i.image3 }}" alt="Image 3" class="tools3">
-        {% endif %}
-        {% if i.image4 %}
-            <img src="{{ i.image4 }}" alt="Image 4" class="tools4">
-        {% endif %}
-        {% if i.image5 %}
-            <img src="{{ i.image5 }}" alt="Image 5" class="tools5">
-        {% endif %}
-        {% if i.image6 %}
-            <img src="{{ i.image6 }}" alt="Image 6" class="tools6">
-        {% endif %}
-    {% endfor %}
+        <h1>Technology</h1>
+        <p>At CP Software Creation, we use modern and reliable tools to deliver solutions that combine 
+            functionality, security, and flexibility.</p>
+
+        <p><strong>Python:</strong> A clean and versatile programming language, suitable for all types of applications.</p>
+        <p><strong>Django:</strong> A powerful Python web framework, ideal for building secure and scalable websites.</p>
+        <p><strong>HTML:</strong> The foundation of every website – used to structure and organise your content.</p>
+        <p><strong>CSS:</strong> We customise the look and feel of your site to match your style and requirements.</p>
+        <p><strong>JavaScript:</strong> Adds interactivity and dynamic behaviour wherever needed.</p>
+        <p><strong>SQL / PostgreSQL:</strong> Reliable solutions for storing and managing data quickly and consistently.</p>
+        <p><strong>Heroku:</strong> A cloud platform for hosting and managing live applications with ease.</p>
+        <p><strong>Kivy:</strong> A Python framework for developing mobile apps across multiple platforms.</p>
+        <p><strong>Tkinter:</strong> Ideal for desktop apps with multiple windows and a simple interface.</p>
+        <p><strong>We choose the right tools for each project based on your needs and goals, 
+            to ensure the best possible outcome.</strong></p>
+
+        <img src="https://res.cloudinary.com/hotitu8ux/image/upload/v1748730112/Python-Logo_imfgez.png" alt="Image 1" class="tools1">
+        
+        <img src="https://res.cloudinary.com/hotitu8ux/image/upload/v1748730168/django-logo-negative_nplwel.png" alt="Image 2" class="tools2">
+        
+        <img src="https://res.cloudinary.com/hotitu8ux/image/upload/v1748730574/Kivy_logo_e8luwa.png" alt="Image 3" class="tools3">
+        
+        <img src="https://res.cloudinary.com/hotitu8ux/image/upload/v1748730618/1_wEAtpMCNxjcW_9VZyGafdg_fd25p2.png" alt="Image 4" class="tools4">
+        
+        <img src="https://res.cloudinary.com/hotitu8ux/image/upload/v1748730791/sql_hokwwh.png" alt="Image 5" class="tools5">
+        
+        <img src="https://res.cloudinary.com/hotitu8ux/image/upload/v1748730513/jvcsshtml_zqseng.png" alt="Image 6" class="tools6">
+  
+        <img src="https://res.cloudinary.com/hotitu8ux/image/upload/v1748731138/Heroku_logo.svg_olryfa.png" alt="Image 6" class="tools7">
+             
     </div>
 
-    {% for i in image3 %}
-        <img src= "{{i.image}}" alt="Main Image" class='Main_image3'>
-    {% endfor %}
+    <img src= "https://res.cloudinary.com/hotitu8ux/image/upload/v1748728022/ChatGPT_Image_Jun_1_2025_12_46_43_AM_drsz4k.png" alt="Main Image" class='Main_image3'>
 
     <a href="#" class="button2" onclick="toggleMessage2(event)">
         Services
@@ -99,21 +122,26 @@
     </a>
 
     <div class="message2" id="message2">
-        {% for i in image3 %}
-            {{ i.content|safe }}
-        {% endfor %}
+        <h1>Services</h1>
+        <p>At CP Software Creation, we offer a range of services designed to help your ideas become 
+            reality with clarity, quality, and care.</p>
+
+        <p><strong>Website Development:</strong> Custom websites built with modern technologies like 
+            Django, HTML, and CSS – responsive, fast, and secure.</p>
+        <p><strong>Web Applications:</strong> Powerful, data-driven applications tailored to your 
+            workflow or business model.</p>
+        <p><strong>Mobile Applications:</strong> Cross-platform apps using Python and Kivy, 
+            built to run on Android and more.</p>
+        <p><strong>Desktop Applications:</strong> Functional apps with multiple windows and custom interfaces, 
+            built with Tkinter.</p>
+        <p><strong>Database Design & Integration:</strong> Structured, reliable data management using SQL and 
+            PostgreSQL.</p>
+        <p><strong>Website Hosting & Deployment:</strong> Launching your project live with Heroku and managing all 
+            the backend setup for you.</p> 
     </div>
 
-    <div class="message3" id="message3">
-        {% for i in image4 %}
-            {{ i.content|safe }}
-        {% endfor %}
-    </div>
 
-    {% for i in image4 %}
-        <img src= "{{i.image}}" alt="Main Image" class='Main_image4'>
-    {% endfor %}
-
+    <img src= "https://res.cloudinary.com/hotitu8ux/image/upload/v1748728622/contact_wn5fj4.jpg" alt="Main Image" class='Main_image4'>
 
     <a href="{% url 'contact_us' %}" class="button3">
         Contact Us

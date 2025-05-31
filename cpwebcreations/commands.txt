@@ -92,6 +92,8 @@ pip install request-session
 Reload Window
 
 py manage.py collectstatic
+python manage.py collectstatic --noinput
+
 
 pip install django-storages
 
