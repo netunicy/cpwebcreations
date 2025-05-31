@@ -342,7 +342,7 @@ h2 {
     font-size: 1.7rem;
     font-weight: bold;
 }
-@media only screen and (max-width: 500px) and (min-width: 280px) {
+@media only screen and (max-width: 768px) and (orientation: portrait) {
 
     body {
         height: 0% !important; 
@@ -517,4 +517,16 @@ h2 {
     .success_messages .full-message {
         display: none; /* Hide the full message on small screens */
     }
+}
+@media only screen and (max-width: 1024px) and (max-height: 600px) and (orientation: landscape) {
+}
+/* s8+ */
+@media only screen and (max-width: 740px) and (max-height: 412px) and (orientation: landscape) {
+}
+/* small laptops */
+@media only screen and (min-width: 1024px) and (max-width: 1366px) and (min-height: 600px) {
+}
+/* big laptops */
+@media only screen and (min-width: 1367px) and (max-width: 1599px) {
+    
 }
